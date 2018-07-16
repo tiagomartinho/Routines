@@ -11,12 +11,12 @@
 		3031237020FCE6C70013DCAE /* AddRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236F20FCE6C70013DCAE /* AddRoutineViewController.swift */; };
 		3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3031237420FCE6C70013DCAE /* Assets.xcassets */; };
 		3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3031237620FCE6C70013DCAE /* LaunchScreen.storyboard */; };
-		3031238320FCE6C70013DCAE /* RoutinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031238220FCE6C70013DCAE /* RoutinesTests.swift */; };
 		3031238E20FCE6C70013DCAE /* RoutinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031238D20FCE6C70013DCAE /* RoutinesUITests.swift */; };
 		3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031239C20FD1F5C0013DCAE /* NotificationScheduler.swift */; };
 		3031239F20FD1F850013DCAE /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031239E20FD1F850013DCAE /* NotificationCenter.swift */; };
 		303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A020FD20650013DCAE /* AddRoutineView.swift */; };
 		303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */; };
+		303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		3031237720FCE6C70013DCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3031237920FCE6C70013DCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3031237E20FCE6C70013DCAE /* RoutinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoutinesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3031238220FCE6C70013DCAE /* RoutinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesTests.swift; sourceTree = "<group>"; };
 		3031238420FCE6C70013DCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3031238920FCE6C70013DCAE /* RoutinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoutinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3031238D20FCE6C70013DCAE /* RoutinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutinesUITests.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		3031239E20FD1F850013DCAE /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		303123A020FD20650013DCAE /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewDelegate.swift; sourceTree = "<group>"; };
+		303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSchedulerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 		3031238120FCE6C70013DCAE /* RoutinesTests */ = {
 			isa = PBXGroup;
 			children = (
-				3031238220FCE6C70013DCAE /* RoutinesTests.swift */,
 				3031238420FCE6C70013DCAE /* Info.plist */,
+				303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */,
 			);
 			path = RoutinesTests;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3031238320FCE6C70013DCAE /* RoutinesTests.swift in Sources */,
+				303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

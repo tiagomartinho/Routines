@@ -2,9 +2,9 @@ import UserNotifications
 
 class NotificationScheduler {
     
-    let center: NotifcationCenter
+    let center: NotificationCenterProtocol
     
-    init(center: NotifcationCenter = UNUserNotificationCenter.current()) {
+    init(center: NotificationCenterProtocol = UNUserNotificationCenter.current()) {
         self.center = center
     }
     

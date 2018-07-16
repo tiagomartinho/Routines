@@ -1,8 +1,8 @@
 import UserNotifications
 
-protocol NotifcationCenter {
+protocol NotificationCenterProtocol {
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Swift.Void)?)
 }
 
-extension UNUserNotificationCenter: NotifcationCenter {
+extension UNUserNotificationCenter: NotificationCenterProtocol {
 }
