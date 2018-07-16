@@ -4,10 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Routines.xcscheme</key>
+		<key>Routines.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3031236920FCE6C70013DCAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3031237D20FCE6C70013DCAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3031238820FCE6C70013DCAE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
