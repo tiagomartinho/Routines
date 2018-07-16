@@ -4,20 +4,34 @@ class AddRoutineViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = AddRoutineView { state in
-            print(state)
-        }
+        view = AddRoutineView(delegate: self)
     }
+}
+
+extension AddRoutineViewController: AddRoutineViewDelegate {
+    
+    func routineOn() {
+        print("routineOn")
+    }
+    
+    func routineOff() {
+        print("routineOff")
+    }
+}
+
+protocol AddRoutineViewDelegate: class {
+    func routineOn()
+    func routineOff()
 }
 
 class AddRoutineView: UIView {
     
     let notificationSwitch = UISwitch()
-    var action: ((Bool)->Void)?
+    var delegate: AddRoutineViewDelegate?
     
-    convenience init(action: @escaping (Bool)->Void) {
+    convenience init(delegate: AddRoutineViewDelegate?) {
         self.init()
-        self.action = action
+        self.delegate = delegate
     }
     
     override init(frame: CGRect) {
@@ -37,7 +51,7 @@ class AddRoutineView: UIView {
     }
     
     @objc func switchDidChange(sender: UISwitch) {
-        action?(sender.isOn)
+        sender.isOn ? delegate?.routineOn() : delegate?.routineOff()
     }
     
     func setupConstraints() {
