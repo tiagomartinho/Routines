@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236D20FCE6C70013DCAE /* AppDelegate.swift */; };
 		3031237020FCE6C70013DCAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236F20FCE6C70013DCAE /* ViewController.swift */; };
-		3031237320FCE6C70013DCAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3031237120FCE6C70013DCAE /* Main.storyboard */; };
 		3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3031237420FCE6C70013DCAE /* Assets.xcassets */; };
 		3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3031237620FCE6C70013DCAE /* LaunchScreen.storyboard */; };
 		3031238320FCE6C70013DCAE /* RoutinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031238220FCE6C70013DCAE /* RoutinesTests.swift */; };
@@ -37,7 +36,6 @@
 		3031236A20FCE6C70013DCAE /* Routines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3031236D20FCE6C70013DCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3031236F20FCE6C70013DCAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3031237220FCE6C70013DCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3031237420FCE6C70013DCAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3031237720FCE6C70013DCAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3031237920FCE6C70013DCAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,10 +97,7 @@
 			children = (
 				3031236D20FCE6C70013DCAE /* AppDelegate.swift */,
 				3031236F20FCE6C70013DCAE /* ViewController.swift */,
-				3031237120FCE6C70013DCAE /* Main.storyboard */,
-				3031237420FCE6C70013DCAE /* Assets.xcassets */,
-				3031237620FCE6C70013DCAE /* LaunchScreen.storyboard */,
-				3031237920FCE6C70013DCAE /* Info.plist */,
+				3031239B20FCE7660013DCAE /* Supporting Files */,
 			);
 			path = Routines;
 			sourceTree = "<group>";
@@ -123,6 +118,16 @@
 				3031238F20FCE6C70013DCAE /* Info.plist */,
 			);
 			path = RoutinesUITests;
+			sourceTree = "<group>";
+		};
+		3031239B20FCE7660013DCAE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3031237420FCE6C70013DCAE /* Assets.xcassets */,
+				3031237620FCE6C70013DCAE /* LaunchScreen.storyboard */,
+				3031237920FCE6C70013DCAE /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +239,6 @@
 			files = (
 				3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */,
 				3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */,
-				3031237320FCE6C70013DCAE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +300,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3031237120FCE6C70013DCAE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3031237220FCE6C70013DCAE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3031237620FCE6C70013DCAE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,7 +423,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Routines/Info.plist;
+				DEVELOPMENT_TEAM = L3GTYCSW62;
+				INFOPLIST_FILE = "$(SRCROOT)/Routines/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.am.Routines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,7 +438,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Routines/Info.plist;
+				DEVELOPMENT_TEAM = L3GTYCSW62;
+				INFOPLIST_FILE = "$(SRCROOT)/Routines/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.am.Routines;
 				PRODUCT_NAME = "$(TARGET_NAME)";
