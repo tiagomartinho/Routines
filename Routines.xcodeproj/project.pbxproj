@@ -17,7 +17,8 @@
 		303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A020FD20650013DCAE /* AddRoutineView.swift */; };
 		303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */; };
 		303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */; };
-		30FFDADC2107280100E4CED0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFDADB2107280100E4CED0 /* Scheduler.swift */; };
+		30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */; };
+		30FFDADF210784D900E4CED0 /* AddRoutine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FFDADE210784D900E4CED0 /* AddRoutine.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		303123A020FD20650013DCAE /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewDelegate.swift; sourceTree = "<group>"; };
 		303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSchedulerTest.swift; sourceTree = "<group>"; };
-		30FFDADB2107280100E4CED0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulerProtocol.swift; sourceTree = "<group>"; };
+		30FFDADE210784D900E4CED0 /* AddRoutine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRoutine.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +148,7 @@
 		30FFDAD72107278200E4CED0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				303123A020FD20650013DCAE /* AddRoutineView.swift */,
-				303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */,
+				30FFDADD210784C800E4CED0 /* AddRoutine */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,9 +173,19 @@
 			children = (
 				3031239C20FD1F5C0013DCAE /* NotificationScheduler.swift */,
 				3031239E20FD1F850013DCAE /* NotificationCenter.swift */,
-				30FFDADB2107280100E4CED0 /* Scheduler.swift */,
+				30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */,
 			);
 			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		30FFDADD210784C800E4CED0 /* AddRoutine */ = {
+			isa = PBXGroup;
+			children = (
+				303123A020FD20650013DCAE /* AddRoutineView.swift */,
+				303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */,
+				30FFDADE210784D900E4CED0 /* AddRoutine.xib */,
+			);
+			path = AddRoutine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 			files = (
 				3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */,
 				3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */,
+				30FFDADF210784D900E4CED0 /* AddRoutine.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3031237020FCE6C70013DCAE /* AddRoutineViewController.swift in Sources */,
-				30FFDADC2107280100E4CED0 /* Scheduler.swift in Sources */,
+				30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,

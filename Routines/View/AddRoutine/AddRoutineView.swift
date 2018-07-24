@@ -1,5 +1,6 @@
 import UIKit
 
+@IBDesignable
 class AddRoutineView: UIView {
     let notificationSwitch = UISwitch()
     weak var delegate: AddRoutineViewDelegate?
@@ -31,6 +32,6 @@ class AddRoutineView: UIView {
 
     func setupConstraints() {
         notificationSwitch.translatesAutoresizingMaskIntoConstraints = false
-        notificationSwitch.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        notificationSwitch.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
     }
 }
