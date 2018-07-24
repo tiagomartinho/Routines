@@ -1,4 +1,5 @@
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -6,8 +7,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
-        window?.rootViewController = AddRoutineViewController()
+        let scheduler = NotificationScheduler()
+        initNotificationSetupCheck()
+        window?.rootViewController = AddRoutineViewController(scheduler: scheduler)
         window?.makeKeyAndVisible()
         return true
+    }
+
+    func initNotificationSetupCheck() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert]) { success, _ in
+            if success {
+                print("Permission Granted")
+            } else {
+                print("There was a problem!")
+            }
+        }
     }
 }
