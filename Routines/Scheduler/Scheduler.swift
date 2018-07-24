@@ -1,3 +1,0 @@
-protocol Scheduler {
-    func schedule()
-}

@@ -1,0 +1,3 @@
+protocol NotificationSchedulerProtocol {
+    func schedule()
+}

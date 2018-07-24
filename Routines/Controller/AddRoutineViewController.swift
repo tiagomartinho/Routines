@@ -2,10 +2,10 @@ import UIKit
 import UserNotifications
 
 class AddRoutineViewController: UIViewController {
-    var scheduler: Scheduler
+    var notificationScheduler: NotificationScheduler
 
-    init(scheduler: Scheduler) {
-        self.scheduler = scheduler
+    init(scheduler: NotificationScheduler) {
+        notificationScheduler = scheduler
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -21,7 +21,8 @@ class AddRoutineViewController: UIViewController {
 
 extension AddRoutineViewController: AddRoutineViewDelegate {
     func routineOn() {
-        scheduler.schedule()
+        notificationScheduler.schedule()
+        notificationScheduler.createNotificationOnDate()
     }
 
     func routineOff() {
