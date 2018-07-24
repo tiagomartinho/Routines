@@ -17,6 +17,7 @@
 		303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A020FD20650013DCAE /* AddRoutineView.swift */; };
 		303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */; };
 		303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */; };
+		30FFDADC2107280100E4CED0 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFDADB2107280100E4CED0 /* Scheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		303123A020FD20650013DCAE /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewDelegate.swift; sourceTree = "<group>"; };
 		303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSchedulerTest.swift; sourceTree = "<group>"; };
+		30FFDADB2107280100E4CED0 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				3031236D20FCE6C70013DCAE /* AppDelegate.swift */,
-				3031236F20FCE6C70013DCAE /* AddRoutineViewController.swift */,
+				30FFDAD72107278200E4CED0 /* View */,
+				30FFDAD82107278F00E4CED0 /* Controller */,
+				30FFDADA210727A500E4CED0 /* Scheduler */,
+				30FFDAD92107279600E4CED0 /* Model */,
 				3031239B20FCE7660013DCAE /* Supporting Files */,
-				3031239C20FD1F5C0013DCAE /* NotificationScheduler.swift */,
-				3031239E20FD1F850013DCAE /* NotificationCenter.swift */,
-				303123A020FD20650013DCAE /* AddRoutineView.swift */,
-				303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */,
 			);
 			path = Routines;
 			sourceTree = "<group>";
@@ -140,6 +141,40 @@
 				3031237920FCE6C70013DCAE /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30FFDAD72107278200E4CED0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				303123A020FD20650013DCAE /* AddRoutineView.swift */,
+				303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30FFDAD82107278F00E4CED0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3031236F20FCE6C70013DCAE /* AddRoutineViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		30FFDAD92107279600E4CED0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30FFDADA210727A500E4CED0 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				3031239C20FD1F5C0013DCAE /* NotificationScheduler.swift */,
+				3031239E20FD1F850013DCAE /* NotificationCenter.swift */,
+				30FFDADB2107280100E4CED0 /* Scheduler.swift */,
+			);
+			path = Scheduler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3031237020FCE6C70013DCAE /* AddRoutineViewController.swift in Sources */,
+				30FFDADC2107280100E4CED0 /* Scheduler.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,
