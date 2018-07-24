@@ -152,6 +152,8 @@
 				3031236620FCE6C70013DCAE /* Sources */,
 				3031236720FCE6C70013DCAE /* Frameworks */,
 				3031236820FCE6C70013DCAE /* Resources */,
+				3087CDA52107264500E2F4EF /* SwiftFormat */,
+				3087CDA62107266000E2F4EF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -269,6 +271,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3087CDA52107264500E2F4EF /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\nswiftformat .\nelse\necho \"warning: Swiftformat not installed, download from https://github.com/realm/Swiftformat\"\nfi";
+		};
+		3087CDA62107266000E2F4EF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3031236620FCE6C70013DCAE /* Sources */ = {
