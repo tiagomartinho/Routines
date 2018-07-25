@@ -21,6 +21,7 @@ class AddRoutineViewController: UIViewController {
 
 extension AddRoutineViewController: AddRoutineViewDelegate {
     func routineOn() {
+        print("turnOn")
         notificationScheduler.schedule()
         notificationScheduler.createNotificationOnDate()
     }

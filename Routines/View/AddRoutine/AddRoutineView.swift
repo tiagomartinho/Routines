@@ -2,7 +2,8 @@ import UIKit
 
 @IBDesignable
 class AddRoutineView: UIView {
-    private let reuseIdentifier = "Cell"
+    private let activateNotificationCell = "ActivateNotificationCell"
+    private let datePickerCell = "DatePickerCell"
 
     let settingsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -32,16 +33,13 @@ class AddRoutineView: UIView {
 
         settingsTableView.dataSource = self
         settingsTableView.delegate = self
-        settingsTableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: reuseIdentifier)
+        settingsTableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: activateNotificationCell)
+        settingsTableView.register(DatePickerCell.self, forCellReuseIdentifier: datePickerCell)
 
         settingsTableView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         settingsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
         settingsTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         settingsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-    }
-
-    @objc func switchDidChange(sender: UISwitch) {
-        sender.isOn ? delegate?.routineOn() : delegate?.routineOff()
     }
 }
 
@@ -51,7 +49,7 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,11 +61,21 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
         return 80
     }
 
-    private func dequeueCell(in tableView: UITableView, index _: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? ActivateNotificationCell {
-            cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
-            return cell
+    private func dequeueCell(in tableView: UITableView, index indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: activateNotificationCell) as? ActivateNotificationCell {
+                cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+                return cell
+            }
+        } else if indexPath.row == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: datePickerCell) as? DatePickerCell {
+                return cell
+            }
         }
-        return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+        return UITableViewCell(style: .default, reuseIdentifier: "cell")
+    }
+
+    @objc private func switchDidChange(sender: UISwitch) {
+        sender.isOn ? delegate?.routineOn() : delegate?.routineOff()
     }
 }

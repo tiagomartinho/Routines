@@ -23,6 +23,10 @@ class ActivateNotificationCell: UITableViewCell {
         setupNotificationSwitch()
     }
 
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func setupLabel() {
         addSubview(label)
 
@@ -38,9 +42,5 @@ class ActivateNotificationCell: UITableViewCell {
         notificationSwitch.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         notificationSwitch.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
         notificationSwitch.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

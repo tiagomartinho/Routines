@@ -17,8 +17,11 @@
 		303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A020FD20650013DCAE /* AddRoutineView.swift */; };
 		303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */; };
 		303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */; };
+		308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C22552108DF7D0030CF6B /* DatePickerCell.swift */; };
+		308C22582108DF8A0030CF6B /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308C22572108DF8A0030CF6B /* DatePickerCell.xib */; };
 		30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */; };
 		30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */; };
+		30F95CB22108D89F00832323 /* AddRoutineViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */; };
 		30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */; };
 		30FFDADF210784D900E4CED0 /* AddRoutine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FFDADE210784D900E4CED0 /* AddRoutine.xib */; };
 /* End PBXBuildFile section */
@@ -57,8 +60,11 @@
 		303123A020FD20650013DCAE /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewDelegate.swift; sourceTree = "<group>"; };
 		303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSchedulerTest.swift; sourceTree = "<group>"; };
+		308C22552108DF7D0030CF6B /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
+		308C22572108DF8A0030CF6B /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
 		30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateNotificationCell.swift; sourceTree = "<group>"; };
 		30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateNotificationView.xib; sourceTree = "<group>"; };
+		30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewTest.swift; sourceTree = "<group>"; };
 		30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulerProtocol.swift; sourceTree = "<group>"; };
 		30FFDADE210784D900E4CED0 /* AddRoutine.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRoutine.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +132,7 @@
 			children = (
 				3031238420FCE6C70013DCAE /* Info.plist */,
 				303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */,
+				30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */,
 			);
 			path = RoutinesTests;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 			children = (
 				30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */,
 				30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */,
+				308C22552108DF7D0030CF6B /* DatePickerCell.swift */,
+				308C22572108DF8A0030CF6B /* DatePickerCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 			files = (
 				30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */,
 				3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */,
+				308C22582108DF8A0030CF6B /* DatePickerCell.xib in Resources */,
 				3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */,
 				30FFDADF210784D900E4CED0 /* AddRoutine.xib in Resources */,
 			);
@@ -375,6 +385,7 @@
 				30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */,
+				308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,
 				303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */,
 				3031239F20FD1F850013DCAE /* NotificationCenter.swift in Sources */,
@@ -386,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */,
+				30F95CB22108D89F00832323 /* AddRoutineViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
