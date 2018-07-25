@@ -32,7 +32,7 @@ class AddRoutineView: UIView {
 
         settingsTableView.dataSource = self
         settingsTableView.delegate = self
-//        settingsTableView.register(ActivateRoutineCell.self, forCellReuseIdentifier: reuseIdentifier)
+        settingsTableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: reuseIdentifier)
 
         settingsTableView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         settingsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
@@ -51,7 +51,7 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,10 +64,10 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     private func dequeueCell(in tableView: UITableView, index _: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? ActivateRoutineCell {
-//            cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
-//            return cell
-//        }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? ActivateNotificationCell {
+            cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+            return cell
+        }
         return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
     }
 }
