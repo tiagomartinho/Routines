@@ -7,6 +7,7 @@ class AddRoutineView: UIView {
     private let dateCell = "DateCell"
 
     var datePickerIndexPath: IndexPath?
+    var datePickerDate: Date?
 
     let settingsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -80,14 +81,6 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
         tableView.endUpdates()
     }
 
-//    func tableView(_: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if datePickerIndexPath == indexPath {
-//            return DatePickerCell.cellHeight()
-//        } else {
-//            return DateCell.cellHeight()
-//        }
-//    }
-
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if datePickerIndexPath == indexPath {
             return DatePickerCell.cellHeight()
@@ -110,6 +103,7 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
             guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: datePickerCell) as? DatePickerCell else {
                 return UITableViewCell()
             }
+            datePickerCell.delegate = self
             return datePickerCell
         } else if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: activateNotificationCell) as? ActivateNotificationCell else {
@@ -127,6 +121,12 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     @objc private func switchDidChange(sender: UISwitch) {
-        sender.isOn ? delegate?.routineOn() : delegate?.routineOff()
+        sender.isOn ? delegate?.routineOn(date: datePickerDate!) : delegate?.routineOff()
+    }
+}
+
+extension AddRoutineView: DatePickerDelegate {
+    func didChangeDate(date: Date) {
+        datePickerDate = date
     }
 }

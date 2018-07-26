@@ -1,6 +1,10 @@
 import Foundation
 import UIKit
 
+protocol DatePickerDelegate: class {
+    func didChangeDate(date: Date)
+}
+
 @IBDesignable
 class DatePickerCell: UITableViewCell {
     let datePicker: UIDatePicker = {
@@ -9,6 +13,8 @@ class DatePickerCell: UITableViewCell {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
+
+    weak var delegate: DatePickerDelegate?
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,9 +33,15 @@ class DatePickerCell: UITableViewCell {
     func setupDatePicker() {
         addSubview(datePicker)
 
+        datePicker.addTarget(self, action: #selector(dateDidChange), for: .valueChanged)
+
         datePicker.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        datePicker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
-        datePicker.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8).isActive = true
+        datePicker.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+    }
+
+    @objc func dateDidChange(_ sender: UIDatePicker) {
+        delegate?.didChangeDate(date: sender.date)
     }
 }
