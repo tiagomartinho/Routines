@@ -2,29 +2,36 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class ActivateNotificationCell: UITableViewCell {
+class DateCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
-        label.text = "Activate Routine"
+        label.text = "Choose Date:"
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    let notificationSwitch: UISwitch = {
-        let notificationSwitch = UISwitch()
-        notificationSwitch.translatesAutoresizingMaskIntoConstraints = false
-        return notificationSwitch
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = "teste"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupLabel()
-        setupNotificationSwitch()
+        setupDateLabel()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // Cell height
+    class func cellHeight() -> CGFloat {
+        return 44.0
     }
 
     func setupLabel() {
@@ -35,11 +42,10 @@ class ActivateNotificationCell: UITableViewCell {
         label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
     }
 
-    func setupNotificationSwitch() {
-        addSubview(notificationSwitch)
-
-        notificationSwitch.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        notificationSwitch.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
-        notificationSwitch.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
+    func setupDateLabel() {
+        addSubview(dateLabel)
+        dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
+        dateLabel.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
     }
 }

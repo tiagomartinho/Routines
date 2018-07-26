@@ -4,6 +4,9 @@ import UIKit
 class AddRoutineView: UIView {
     private let activateNotificationCell = "ActivateNotificationCell"
     private let datePickerCell = "DatePickerCell"
+    private let dateCell = "DateCell"
+
+    var datePickerIndexPath: IndexPath?
 
     let settingsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -35,6 +38,7 @@ class AddRoutineView: UIView {
         settingsTableView.delegate = self
         settingsTableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: activateNotificationCell)
         settingsTableView.register(DatePickerCell.self, forCellReuseIdentifier: datePickerCell)
+        settingsTableView.register(DateCell.self, forCellReuseIdentifier: dateCell)
 
         settingsTableView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         settingsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
@@ -49,7 +53,11 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 2
+        if datePickerIndexPath != nil {
+            return 3
+        } else {
+            return 2
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,20 +65,63 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_: UITableView, estimatedHeightForRowAt _: IndexPath) -> CGFloat {
-        return 80
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row - 1 == indexPath.row {
+            tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
+            self.datePickerIndexPath = nil
+        } else {
+            if indexPath.row == 1 {
+                datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
+                tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+        }
+        tableView.endUpdates()
+    }
+
+//    func tableView(_: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if datePickerIndexPath == indexPath {
+//            return DatePickerCell.cellHeight()
+//        } else {
+//            return DateCell.cellHeight()
+//        }
+//    }
+
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if datePickerIndexPath == indexPath {
+            return DatePickerCell.cellHeight()
+        } else {
+            return DateCell.cellHeight()
+        }
+    }
+
+    private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
+        if let datePickerIndexPath = datePickerIndexPath,
+            datePickerIndexPath.row < indexPath.row {
+            return indexPath
+        } else {
+            return IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        }
     }
 
     private func dequeueCell(in tableView: UITableView, index indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: activateNotificationCell) as? ActivateNotificationCell {
-                cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
-                return cell
+        if datePickerIndexPath == indexPath {
+            guard let datePickerCell = tableView.dequeueReusableCell(withIdentifier: datePickerCell) as? DatePickerCell else {
+                return UITableViewCell()
             }
+            return datePickerCell
+        } else if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: activateNotificationCell) as? ActivateNotificationCell else {
+                return UITableViewCell()
+            }
+            cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+            return cell
         } else if indexPath.row == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: datePickerCell) as? DatePickerCell {
-                return cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: dateCell) as? DateCell else {
+                return UITableViewCell()
             }
+            return cell
         }
         return UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
