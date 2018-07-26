@@ -16,6 +16,8 @@ class AddRoutineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view = AddRoutineView(delegate: self)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Create Routine"
     }
 }
 
