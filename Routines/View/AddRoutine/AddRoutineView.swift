@@ -49,6 +49,11 @@ class AddRoutineView: UIView {
 }
 
 extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_: UITableView,
+                   titleForHeaderInSection _: Int) -> String? {
+        return " "
+    }
+
     func numberOfSections(in _: UITableView) -> Int {
         return 1
     }
@@ -121,12 +126,15 @@ extension AddRoutineView: UITableViewDelegate, UITableViewDataSource {
     }
 
     @objc private func switchDidChange(sender: UISwitch) {
-        sender.isOn ? delegate?.routineOn(date: datePickerDate!) : delegate?.routineOff()
+        let date = datePickerDate != nil ? datePickerDate! : Date()
+        sender.isOn ? delegate?.routineOn(date: date) : delegate?.routineOff()
     }
 }
 
 extension AddRoutineView: DatePickerDelegate {
     func didChangeDate(date: Date) {
+        let cell = settingsTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? DateCell
+        cell?.setLabelText(text: DateHelper.convertDateToString(date: date))
         datePickerDate = date
     }
 }

@@ -21,7 +21,7 @@ class AddRoutineViewTest: XCTestCase {
         XCTAssertNotNil(cell)
     }
 
-    func test_tableViewCell_WhenValueChange_SwitchCallDelegate() {
+    func test_tableViewCell_WhenTurnOnSwitch_NotificationIsSchedule() {
         let addRoutineDelegate = SpyAddRoutineDelegate()
         let sut = makeSUT(addRoutineDelegate)
         let cell = sut.settingsTableView.cell(at: 0) as? ActivateNotificationCell
@@ -41,7 +41,7 @@ class AddRoutineViewTest: XCTestCase {
     class SpyAddRoutineDelegate: AddRoutineViewDelegate {
         var fired = false
 
-        func routineOn() {
+        func routineOn(date: Date){
             fired = true
         }
 
