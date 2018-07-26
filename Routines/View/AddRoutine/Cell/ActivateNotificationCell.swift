@@ -5,7 +5,7 @@ import UIKit
 class ActivateNotificationCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
-        label.text = "Activate Routine"
+        label.text = "Remind me on a day"
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

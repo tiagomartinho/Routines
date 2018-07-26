@@ -5,7 +5,7 @@ import UIKit
 class DateCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
-        label.text = "Choose Date:"
+        label.text = "Alarm"
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
