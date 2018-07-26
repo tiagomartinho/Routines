@@ -19,17 +19,12 @@ class NotificationScheduler: NotificationSchedulerProtocol {
         center.add(request, withCompletionHandler: nil)
     }
 
-    func createNotificationOnDate() {
+    func createNotificationOnDate(date: Date) {
         let notification = UNMutableNotificationContent()
         notification.title = "My First Notification"
         notification.subtitle = "Study Swift"
-        notification.body = "This is the body from my first notification"
-        // Swift
-        let date = Date(timeIntervalSinceNow: 300)
-//        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-        // Every 5 minutes
-        let triggerDate = Calendar.current.dateComponents([.minute, .second], from: date)
-
+        notification.body = "This is the notification create at \(date)"
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
                                                                 repeats: true)
         let request = UNNotificationRequest(identifier: UUID().uuidString,

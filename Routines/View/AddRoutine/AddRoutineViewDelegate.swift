@@ -1,4 +1,5 @@
+import Foundation
 protocol AddRoutineViewDelegate: class {
-    func routineOn()
+    func routineOn(date: Date)
     func routineOff()
 }
