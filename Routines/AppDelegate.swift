@@ -9,7 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         let scheduler = NotificationScheduler()
         initNotificationSetupCheck()
-        window?.rootViewController = AddRoutineViewController(scheduler: scheduler)
+        let addRoutineViewController = AddRoutineViewController(scheduler: scheduler)
+        window?.rootViewController = UINavigationController(rootViewController: addRoutineViewController)
         window?.makeKeyAndVisible()
         return true
     }
