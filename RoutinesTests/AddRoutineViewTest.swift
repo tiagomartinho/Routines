@@ -41,7 +41,7 @@ class AddRoutineViewTest: XCTestCase {
     class SpyAddRoutineDelegate: AddRoutineViewDelegate {
         var fired = false
 
-        func routineOn(date: Date){
+        func routineOn(date _: Date) {
             fired = true
         }
 

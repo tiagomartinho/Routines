@@ -1,10 +1,6 @@
 import Foundation
 import UIKit
 
-protocol DatePickerDelegate: class {
-    func didChangeDate(date: Date)
-}
-
 @IBDesignable
 class DatePickerCell: UITableViewCell {
     let datePicker: UIDatePicker = {
