@@ -21,7 +21,7 @@ class DatePickerCell: UITableViewCell {
 
     // Cell height
     class func cellHeight() -> CGFloat {
-        return 162.0
+        return 216
     }
 
     func setupDatePicker() {

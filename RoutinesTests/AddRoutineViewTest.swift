@@ -16,7 +16,7 @@ class AddRoutineViewTest: XCTestCase {
         let addRoutineDelegate = SpyAddRoutineDelegate()
 
         let sut = makeSUT(addRoutineDelegate)
-        let cell = sut.settingsTableView.cell(at: 1) as? DatePickerCell
+        let cell = sut.settingsTableView.cell(at: 1) as? DateCell
 
         XCTAssertNotNil(cell)
     }
