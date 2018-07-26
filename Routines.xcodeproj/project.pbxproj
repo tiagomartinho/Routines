@@ -17,6 +17,8 @@
 		303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A020FD20650013DCAE /* AddRoutineView.swift */; };
 		303123A320FD20870013DCAE /* AddRoutineViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */; };
 		303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */; };
+		3066A725210A2FDB001A9BBE /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A724210A2FDB001A9BBE /* DateHelper.swift */; };
+		3066A727210A3042001A9BBE /* DateHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A726210A3042001A9BBE /* DateHelperTest.swift */; };
 		308BD77B2109D450003C271E /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BD77A2109D450003C271E /* DateCell.swift */; };
 		308BD77D2109D457003C271E /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308BD77C2109D457003C271E /* DateCell.xib */; };
 		308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C22552108DF7D0030CF6B /* DatePickerCell.swift */; };
@@ -62,6 +64,8 @@
 		303123A020FD20650013DCAE /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewDelegate.swift; sourceTree = "<group>"; };
 		303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationSchedulerTest.swift; sourceTree = "<group>"; };
+		3066A724210A2FDB001A9BBE /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		3066A726210A3042001A9BBE /* DateHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTest.swift; sourceTree = "<group>"; };
 		308BD77A2109D450003C271E /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		308BD77C2109D457003C271E /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		308C22552108DF7D0030CF6B /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				3031238420FCE6C70013DCAE /* Info.plist */,
 				303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */,
 				30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */,
+				3066A726210A3042001A9BBE /* DateHelperTest.swift */,
 			);
 			path = RoutinesTests;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				303123A020FD20650013DCAE /* AddRoutineView.swift */,
 				303123A220FD20870013DCAE /* AddRoutineViewDelegate.swift */,
 				30FFDADE210784D900E4CED0 /* AddRoutine.xib */,
+				3066A724210A2FDB001A9BBE /* DateHelper.swift */,
 			);
 			path = AddRoutine;
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,
 				303123A120FD20650013DCAE /* AddRoutineView.swift in Sources */,
+				3066A725210A2FDB001A9BBE /* DateHelper.swift in Sources */,
 				3031239F20FD1F850013DCAE /* NotificationCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3066A727210A3042001A9BBE /* DateHelperTest.swift in Sources */,
 				303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */,
 				30F95CB22108D89F00832323 /* AddRoutineViewTest.swift in Sources */,
 			);
