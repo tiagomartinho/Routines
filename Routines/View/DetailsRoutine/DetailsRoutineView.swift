@@ -1,20 +1,13 @@
 import UIKit
 
 @IBDesignable
-class AddRoutineView: UIView {
-    var source: AddRoutineSource?
-
+class DetailsRoutineView: UIView {
     let settingsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.backgroundColor = UIColor(red: 243.0 / 255, green: 243.0 / 255, blue: 243.0 / 255, alpha: 1)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-
-    convenience init(delegate: AddRoutineViewDelegate?) {
-        self.init()
-        source = AddRoutineSource(tableView: settingsTableView, delegate: delegate)
-    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

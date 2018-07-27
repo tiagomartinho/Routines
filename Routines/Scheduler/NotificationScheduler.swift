@@ -19,6 +19,15 @@ class NotificationScheduler: NotificationSchedulerProtocol {
         center.add(request, withCompletionHandler: nil)
     }
 
+    func getAllNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print(request)
+            }
+        })
+    }
+
     func createNotificationOnDate(date: Date) {
         let notification = UNMutableNotificationContent()
         notification.title = "My First Notification"

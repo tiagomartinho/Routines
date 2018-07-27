@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class AddRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource, DatePickerDelegate {
+class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource, DatePickerDelegate {
     private let activateNotificationCell = "ActivateNotificationCell"
     private let datePickerCell = "DatePickerCell"
     private let dateCell = "DateCell"
@@ -9,9 +9,9 @@ class AddRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource, Da
     var datePickerIndexPath: IndexPath?
     let tableView: UITableView
     var datePickerDate: Date?
-    weak var delegate: AddRoutineViewDelegate?
+    weak var delegate: DetailsRoutineViewDelegate?
 
-    init(tableView: UITableView, delegate: AddRoutineViewDelegate?) {
+    init(tableView: UITableView, delegate: DetailsRoutineViewDelegate?) {
         self.tableView = tableView
         super.init()
         self.delegate = delegate

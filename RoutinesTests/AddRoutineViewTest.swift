@@ -33,12 +33,12 @@ class AddRoutineViewTest: XCTestCase {
 
     // MARK: Helpers
 
-    func makeSUT(_ delegate: AddRoutineViewDelegate) -> AddRoutineView {
-        let sut = AddRoutineView(delegate: delegate)
+    func makeSUT(_ delegate: AddRoutineViewDeleDetailsRoutineViewutineView {
+        let sut = DetailsRoutineView()
         return sut
     }
 
-    class SpyAddRoutineDelegate: AddRoutineViewDelegate {
+    class SpyAddRoutineDelegate: DetailsRoutineViewDelegate {
         var fired = false
 
         func routineOn(date _: Date) {
