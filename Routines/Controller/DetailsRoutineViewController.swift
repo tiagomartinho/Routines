@@ -21,7 +21,7 @@ class DetailsRoutineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainSource = DetailsRoutineSource(tableView: mainView.settingsTableView, delegate: self)
+        mainSource = DetailsRoutineSource(tableView: mainView.settingsTableView)
         navigationItem.title = "Routine"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
     }
