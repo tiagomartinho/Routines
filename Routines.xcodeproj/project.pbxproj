@@ -25,6 +25,8 @@
 		308BD77D2109D457003C271E /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308BD77C2109D457003C271E /* DateCell.xib */; };
 		308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C22552108DF7D0030CF6B /* DatePickerCell.swift */; };
 		308C22582108DF8A0030CF6B /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 308C22572108DF8A0030CF6B /* DatePickerCell.xib */; };
+		30CDDDCB210B9A4700B1A65D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */; };
+		30CDDDCD210B9A5400B1A65D /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */; };
 		30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */; };
 		30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */; };
 		30F95CB22108D89F00832323 /* AddRoutineViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */; };
@@ -74,6 +76,8 @@
 		308BD77C2109D457003C271E /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		308C22552108DF7D0030CF6B /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		308C22572108DF8A0030CF6B /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
+		30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateNotificationCell.swift; sourceTree = "<group>"; };
 		30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateNotificationView.xib; sourceTree = "<group>"; };
 		30F95CB12108D89F00832323 /* AddRoutineViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewTest.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				308BD77A2109D450003C271E /* DateCell.swift */,
 				308BD77C2109D457003C271E /* DateCell.xib */,
 				3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */,
+				30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */,
+				30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				308BD77D2109D457003C271E /* DateCell.xib in Resources */,
 				3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */,
 				30FFDADF210784D900E4CED0 /* DetailsRoutineView.xib in Resources */,
+				30CDDDCD210B9A5400B1A65D /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +411,7 @@
 				3066A729210A3527001A9BBE /* DetailsRoutineSource.swift in Sources */,
 				308BD77B2109D450003C271E /* DateCell.swift in Sources */,
 				30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */,
+				30CDDDCB210B9A4700B1A65D /* TextFieldCell.swift in Sources */,
 				30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				303123A320FD20870013DCAE /* DetailsRoutineViewDelegate.swift in Sources */,
