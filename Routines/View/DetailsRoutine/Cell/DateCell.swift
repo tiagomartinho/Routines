@@ -1,4 +1,5 @@
 import Foundation
+import TinyConstraints
 import UIKit
 
 @IBDesignable
@@ -42,15 +43,14 @@ class DateCell: UITableViewCell {
     func setupLabel() {
         addSubview(label)
 
-        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
-        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
+        label.centerYToSuperview()
+        label.leadingToSuperview(offset: 8)
     }
 
     func setupDateLabel() {
         addSubview(dateLabel)
-        dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
-        dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
+
+        dateLabel.centerYToSuperview()
+        dateLabel.trailingToSuperview(offset: 8)
     }
 }

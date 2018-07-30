@@ -6,6 +6,7 @@ import UIKit
 class TextFieldCell: UITableViewCell {
     let textField: UITextField = {
         let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
