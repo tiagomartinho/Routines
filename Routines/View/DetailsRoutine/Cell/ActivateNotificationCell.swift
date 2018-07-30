@@ -30,16 +30,14 @@ class ActivateNotificationCell: UITableViewCell {
     func setupLabel() {
         addSubview(label)
 
-        label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
-        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
+        label.centerYToSuperview()
+        label.leadingToSuperview(offset: 8)
     }
 
     func setupNotificationSwitch() {
         addSubview(notificationSwitch)
 
-        notificationSwitch.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        notificationSwitch.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
-        notificationSwitch.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
+        notificationSwitch.centerYToSuperview()
+        notificationSwitch.trailingToSuperview(offset: 8)
     }
 }
