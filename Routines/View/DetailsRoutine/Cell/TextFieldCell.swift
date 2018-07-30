@@ -1,12 +1,11 @@
 import Foundation
+import TinyConstraints
 import UIKit
 
 @IBDesignable
 class TextFieldCell: UITableViewCell {
     let textField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .blue
         return textField
     }()
 
@@ -35,10 +34,6 @@ class TextFieldCell: UITableViewCell {
     func setupTextField() {
         addSubview(textField)
 
-        textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
-        textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8).isActive = true
-        textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 8).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: contentView.frame.width).isActive = true
+        textField.edgesToSuperview(insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: -8))
     }
 }
