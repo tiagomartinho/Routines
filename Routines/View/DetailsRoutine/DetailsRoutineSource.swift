@@ -104,6 +104,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
                     return UITableViewCell()
                 }
                 cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+                cell.selectionStyle = .none
                 return cell
             } else if indexPath.row == 1 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: dateCell) as? DateCell else {
