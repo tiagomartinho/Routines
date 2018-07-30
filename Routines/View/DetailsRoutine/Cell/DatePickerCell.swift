@@ -31,10 +31,7 @@ class DatePickerCell: UITableViewCell {
 
         datePicker.addTarget(self, action: #selector(dateDidChange), for: .valueChanged)
 
-        datePicker.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        datePicker.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8).isActive = true
-        datePicker.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
-        datePicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        datePicker.edgesToSuperview()
     }
 
     @objc func dateDidChange(_ sender: UIDatePicker) {

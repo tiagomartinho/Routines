@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,20 +60,20 @@
 		26CF0AFD273C3AD62CA0A1A12291A2DE /* Pods-RoutinesUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RoutinesUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		27C7FE9A1ED6D52C947C16F4D99589ED /* Pods-Routines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routines.release.xcconfig"; sourceTree = "<group>"; };
 		31BAA98340A614A8C3DB1F754B391D18 /* Pods-Routines-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Routines-acknowledgements.plist"; sourceTree = "<group>"; };
-		37EC89FEA939ED9CAE8B6EC86C1E269A /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TinyConstraints.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37EC89FEA939ED9CAE8B6EC86C1E269A /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E51F579F226383B63A095E308E6E25 /* Pods-RoutinesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RoutinesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4C1F7C266DE2B6ED67F4BBF2B8A7A1AF /* Pods-RoutinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RoutinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		50294C10B6DA0304940EFC253610A8AB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		537E7BE4CB8BD0895DAD9A2EE1356C1A /* Pods-RoutinesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RoutinesTests.modulemap"; sourceTree = "<group>"; };
 		54ADAD21E37EA0B03AF9621963E0AB0D /* Pods-Routines-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Routines-dummy.m"; sourceTree = "<group>"; };
 		560FA4DC7CE3742609EBC78D0E1D53A7 /* Pods-RoutinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RoutinesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		56D40DC472105337FF742E364D556C90 /* Pods_RoutinesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RoutinesUITests.framework; path = "Pods-RoutinesUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D40DC472105337FF742E364D556C90 /* Pods_RoutinesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutinesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5DF4B324BB528718D59CD3B8606EAC56 /* Pods-RoutinesUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RoutinesUITests-frameworks.sh"; sourceTree = "<group>"; };
 		60A248F449ECAC474A31DC0048B9DDFC /* Pods-RoutinesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RoutinesTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		65208B9F7A2595AD2B761CF38BC4A35F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6564A5F35C2C777E396B11F7C8126D18 /* Pods_Routines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Routines.framework; path = "Pods-Routines.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6743CA8A2FCBB5A418BD895EC11013B4 /* Pods_RoutinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RoutinesTests.framework; path = "Pods-RoutinesTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6564A5F35C2C777E396B11F7C8126D18 /* Pods_Routines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6743CA8A2FCBB5A418BD895EC11013B4 /* Pods_RoutinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB604E54EC59FFD9CB6D3452F8DD746 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = TinyConstraints/Classes/Stack.swift; sourceTree = "<group>"; };
 		737F269E4F2C06908272D92573D3CA82 /* Constrainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrainable.swift; path = TinyConstraints/Classes/Constrainable.swift; sourceTree = "<group>"; };
 		7A75E812D147AB63997390002E98757B /* TinyConstraints-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-prefix.pch"; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		85F45D88430081F8855150B82CBFE2D9 /* Pods-RoutinesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RoutinesTests-umbrella.h"; sourceTree = "<group>"; };
 		86812B341F06305FD96B71C15B907497 /* Pods-Routines-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Routines-acknowledgements.markdown"; sourceTree = "<group>"; };
 		90878EE1D353D6C94CA10B9B812553DE /* TinyConstraints.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TinyConstraints.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D8065292A58C8DDD75B067221AEE516 /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
 		A191554901C7C3DA7AC230E01B6D6FB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A658EB028BA31A692AE4FC0EF9B9AB78 /* Pods-Routines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Routines.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +167,6 @@
 				7D2B36A455C25EC7FFE080173BC205FC /* TinyConstraints+superview.swift */,
 				9D70BA5FBA62C82F1BF1D7806510AE13 /* Support Files */,
 			);
-			name = TinyConstraints;
 			path = TinyConstraints;
 			sourceTree = "<group>";
 		};
@@ -393,7 +392,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -864,6 +863,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
