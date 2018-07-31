@@ -33,13 +33,13 @@ class DetailsRoutineViewController: UIViewController {
         let alarm = mainSource?.alarm
         let routine = Routine(name: routineName, alarm: alarm!, date: date, frequency: frequency)
         if alarm! {
-            createNotificaton(id: routine.getId(), on: date, frequency: frequency)
+            createNotificaton(id: routine.getId(), name: routineName, on: date, frequency: frequency)
         }
         // save routine
     }
 
-    func createNotificaton(id: String, on: Date, frequency: Frequency?) {
-        notificationScheduler.createNotificationOnDate(id: id, date: on, frequency: frequency)
+    func createNotificaton(id: String, name: String, on date: Date, frequency: Frequency?) {
+        notificationScheduler.createNotificationOnDate(id: id, name: name, date: date, frequency: frequency)
         notificationScheduler.getAllNotifications()
     }
 

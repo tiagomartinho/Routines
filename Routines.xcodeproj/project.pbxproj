@@ -37,7 +37,6 @@
 		30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */; };
 		30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */; };
 		30F95CB22108D89F00832323 /* DetailsRoutineViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */; };
-		30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */; };
 		30FFDADF210784D900E4CED0 /* DetailsRoutineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */; };
 		A629E597D58EC6D61B1FD480 /* Pods_RoutinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79E32EDAF7DABD828B9E56 /* Pods_RoutinesTests.framework */; };
 		CA63F3B9277CF4842871B897 /* Pods_RoutinesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE5B9E72A65EAC65358121 /* Pods_RoutinesUITests.framework */; };
@@ -100,7 +99,6 @@
 		30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateNotificationCell.swift; sourceTree = "<group>"; };
 		30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateNotificationView.xib; sourceTree = "<group>"; };
 		30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewTest.swift; sourceTree = "<group>"; };
-		30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulerProtocol.swift; sourceTree = "<group>"; };
 		30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsRoutineView.xib; sourceTree = "<group>"; };
 		5560E33094045FF2B2466B04 /* Pods-RoutinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesUITests/Pods-RoutinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A87F0E2964A4925133B8FC1 /* Pods-RoutinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesTests/Pods-RoutinesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 			children = (
 				3031239C20FD1F5C0013DCAE /* NotificationScheduler.swift */,
 				3031239E20FD1F850013DCAE /* NotificationCenter.swift */,
-				30FFDADB2107280100E4CED0 /* NotificationSchedulerProtocol.swift */,
 			);
 			path = Scheduler;
 			sourceTree = "<group>";
@@ -553,7 +550,6 @@
 				30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */,
 				30820283210F754C001BB9CB /* Routine.swift in Sources */,
 				30CDDDCB210B9A4700B1A65D /* TextFieldCell.swift in Sources */,
-				30FFDADC2107280100E4CED0 /* NotificationSchedulerProtocol.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,

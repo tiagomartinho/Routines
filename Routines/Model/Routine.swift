@@ -8,11 +8,11 @@ class Routine {
     private var frequency: Frequency?
 
     init(name: String, alarm: Bool, date: Date, frequency: Frequency? = nil) {
+        id = UUID().uuidString
         self.name = name
         self.alarm = alarm
         self.date = date
         self.frequency = frequency
-        id = UUID().uuidString
     }
 
     func getId() -> String {

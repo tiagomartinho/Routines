@@ -15,18 +15,6 @@ class DetailsRoutineViewTest: XCTestCase {
         let sut = DetailsRoutineView()
         return sut
     }
-
-    class SpyAddRoutineDelegate: DetailsRoutineViewDelegate {
-        var fired = false
-
-        func routineOn(date _: Date) {
-            fired = true
-        }
-
-        func routineOff() {
-            fired = true
-        }
-    }
 }
 
 extension UITableView {

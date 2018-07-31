@@ -8,7 +8,7 @@ class NotifcationSchedulerTest: XCTestCase {
         let sut = makeSUT(center)
         XCTAssertFalse(center.addCalled)
 
-        sut.schedule()
+        sut.createNotificationOnDate(id: "teste", name: "teste", date: Date(), frequency: Frequency.day)
 
         XCTAssert(center.addCalled)
     }

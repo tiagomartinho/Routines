@@ -1,22 +1,10 @@
 import UserNotifications
 
-class NotificationScheduler: NotificationSchedulerProtocol {
+class NotificationScheduler {
     let center: NotificationCenterProtocol
 
     init(center: NotificationCenterProtocol = UNUserNotificationCenter.current()) {
         self.center = center
-    }
-
-    func schedule() {
-        let notification = UNMutableNotificationContent()
-        notification.title = "My First Notification"
-        notification.subtitle = "Study Swift"
-        notification.body = "This is the body from my first notification"
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString,
-                                            content: notification,
-                                            trigger: notificationTrigger)
-        center.add(request, withCompletionHandler: nil)
     }
 
     func getAllNotifications() {
@@ -28,10 +16,9 @@ class NotificationScheduler: NotificationSchedulerProtocol {
         })
     }
 
-    func createNotificationOnDate(id: String, date: Date, frequency: Frequency?) {
+    func createNotificationOnDate(id: String, name: String, date: Date, frequency: Frequency?) {
         let notification = UNMutableNotificationContent()
-        notification.title = "My First Notification"
-        notification.subtitle = "Study Swift"
+        notification.title = name
         notification.body = "This is the notification create at \(date)"
         let dateComponents = dateComponentsBuilder(frequency: frequency)
         let triggerDate = Calendar.current.dateComponents(dateComponents, from: date)
@@ -48,7 +35,7 @@ class NotificationScheduler: NotificationSchedulerProtocol {
         case .day?:
             return [.hour, .minute, .second]
         case .week?:
-            return [.year, .month, .day, .hour, .minute, .second]
+            return [.weekday, .hour, .minute, .second]
         case .month?:
             return [.day, .hour, .minute, .second]
         case .year?:
