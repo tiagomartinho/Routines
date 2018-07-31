@@ -123,11 +123,13 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: dateCell) as? DateCell else {
                     return UITableViewCell()
                 }
+                cell.isHidden = true
                 return cell
             } else if indexPath.row == 2 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: repeatLabel) as? RepeatCell else {
                     return UITableViewCell()
                 }
+                cell.isHidden = true
                 return cell
             }
         }
@@ -136,6 +138,10 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
 
     @objc private func switchDidChange(sender: UISwitch) {
         alarm = sender.isOn ? true : false
+        let dateCell = tableView.cellForRow(at: IndexPath(row: 1, section: 1))
+        let repeatCell = tableView.cellForRow(at: IndexPath(row: 2, section: 1))
+        dateCell?.isHidden = !alarm
+        repeatCell?.isHidden = !alarm
     }
 }
 
