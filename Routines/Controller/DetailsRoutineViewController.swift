@@ -21,23 +21,40 @@ class DetailsRoutineViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainSource = DetailsRoutineSource(tableView: mainView.settingsTableView)
+        mainSource = DetailsRoutineSource(tableView: mainView.settingsTableView, delegate: self)
         navigationItem.title = "Routine"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
     }
 
     @objc func doneTapped() {
-        print("done tapped")
+        guard let routineName = mainSource?.routineName else {
+            fatalError()
+        }
+        guard let alarm = mainSource?.alarm else {
+            fatalError()
+        }
+        guard let date = mainSource?.datePickerDate else {
+            fatalError()
+        }
+        let routine = Routine(name: routineName, alarm: alarm, date: date)
+        if alarm {
+            createNotificaton(on: date)
+        }
+        // save routine
     }
-}
 
-extension DetailsRoutineViewController: DetailsRoutineViewDelegate {
-    func routineOn(date: Date) {
-        notificationScheduler.createNotificationOnDate(date: date)
+    func createNotificaton(on: Date) {
+        notificationScheduler.createNotificationOnDate(date: on)
         notificationScheduler.getAllNotifications()
     }
 
     func routineOff() {
         print("routineOff")
+    }
+}
+
+extension DetailsRoutineViewController: DetailsRoutineViewControllerDelegate {
+    func routeToRepeatViewController() {
+        navigationController?.pushViewController(RepeatViewController(), animated: true)
     }
 }
