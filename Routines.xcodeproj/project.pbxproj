@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302F31E12110B9DC00BD727A /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F31E02110B9DC00BD727A /* RepeatCell.swift */; };
 		3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236D20FCE6C70013DCAE /* AppDelegate.swift */; };
 		3031237020FCE6C70013DCAE /* DetailsRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */; };
 		3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3031237420FCE6C70013DCAE /* Assets.xcassets */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		2F4B87FBE3A54FF600BB92DB /* Pods_Routines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8DC62A42F9FC5BB29B3144 /* Pods-Routines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routines/Pods-Routines.release.xcconfig"; sourceTree = "<group>"; };
+		302F31E02110B9DC00BD727A /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
+		302F31E22110B9F200BD727A /* RepeatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepeatCell.xib; path = /Users/andremartingo/Development/Swift/Routines/Routines/View/DetailsRoutineViewController/Cell/RepeatCell.xib; sourceTree = "<absolute>"; };
 		3031236A20FCE6C70013DCAE /* Routines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3031236D20FCE6C70013DCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */,
 				30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */,
 				30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */,
+				302F31E02110B9DC00BD727A /* RepeatCell.swift */,
+				302F31E22110B9F200BD727A /* RepeatCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,
 				303123A120FD20650013DCAE /* DetailsRoutineView.swift in Sources */,
+				302F31E12110B9DC00BD727A /* RepeatCell.swift in Sources */,
 				30B28899211064400069852F /* Frequency.swift in Sources */,
 				3066A725210A2FDB001A9BBE /* DateHelper.swift in Sources */,
 				30B2889B21106CFC0069852F /* FrequencyDelegate.swift in Sources */,

@@ -5,10 +5,11 @@ class DetailsRoutineViewController: UIViewController {
     var notificationScheduler: NotificationScheduler
     lazy var mainView: DetailsRoutineView = DetailsRoutineView()
     var mainSource: DetailsRoutineSource?
-    var frequency: Frequency?
+    var frequency: Frequency
 
     init(scheduler: NotificationScheduler) {
         notificationScheduler = scheduler
+        frequency = Frequency.never
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -50,12 +51,14 @@ class DetailsRoutineViewController: UIViewController {
 
 extension DetailsRoutineViewController: DetailsRoutineViewControllerDelegate {
     func routeToRepeatViewController() {
-        navigationController?.pushViewController(RepeatViewController(delegate: self), animated: true)
+        navigationController?.pushViewController(RepeatViewController(delegate: self, frequency: frequency), animated: true)
     }
 }
 
 extension DetailsRoutineViewController: FrequencyDelegate {
     func setFrequency(frequency: Frequency) {
+        print(frequency)
         self.frequency = frequency
+        mainSource?.frequency = self.frequency.rawValue
     }
 }

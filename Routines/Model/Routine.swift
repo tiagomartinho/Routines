@@ -5,9 +5,9 @@ class Routine {
     private var name: String?
     private var alarm: Bool?
     private var date: Date?
-    private var frequency: Frequency?
+    private var frequency: Frequency
 
-    init(name: String, alarm: Bool, date: Date, frequency: Frequency? = nil) {
+    init(name: String, alarm: Bool, date: Date, frequency: Frequency) {
         id = UUID().uuidString
         self.name = name
         self.alarm = alarm

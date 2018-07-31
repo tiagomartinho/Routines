@@ -6,6 +6,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     private let datePickerCell = "DatePickerCell"
     private let dateCell = "DateCell"
     private let textFieldCell = "TextFieldCell"
+    private let repeatLabel = "RepeatLabel"
 
     private var datePickerIndexPath: IndexPath?
     private var detailsDelegate: DetailsRoutineViewControllerDelegate?
@@ -13,6 +14,12 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     var datePickerDate: Date?
     var alarm: Bool
     var routineName: String?
+    var frequency: String? {
+        didSet {
+            let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 1)) as? RepeatCell
+            cell?.setFrequencyLabelText(text: frequency!)
+        }
+    }
 
     init(tableView: UITableView, delegate: DetailsRoutineViewControllerDelegate) {
         self.tableView = tableView
@@ -26,6 +33,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         tableView.register(DatePickerCell.self, forCellReuseIdentifier: datePickerCell)
         tableView.register(DateCell.self, forCellReuseIdentifier: dateCell)
         tableView.register(TextFieldCell.self, forCellReuseIdentifier: textFieldCell)
+        tableView.register(RepeatCell.self, forCellReuseIdentifier: repeatLabel)
     }
 
     func tableView(_: UITableView,
@@ -117,9 +125,9 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
                 }
                 return cell
             } else if indexPath.row == 2 {
-                let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-                cell.textLabel!.text = "Repeat"
-                cell.accessoryType = .disclosureIndicator
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: repeatLabel) as? RepeatCell else {
+                    return UITableViewCell()
+                }
                 return cell
             }
         }

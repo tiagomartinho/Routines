@@ -8,11 +8,11 @@ class RoutineTest: XCTestCase {
 
         XCTAssertNotNil(sut)
     }
-    
+
     func test_whenCreateRoutine_canGetId() {
         let today = Date()
         let sut = makeSUT(name: "FirstRoutine", alarm: true, date: today)
-        
+
         XCTAssertNotNil(sut.getId())
     }
 

@@ -4,10 +4,13 @@ import UIKit
 class RepeatSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     let tableView: UITableView
     let delegate: FrequencyDelegate?
+    let frequency: Frequency?
+    private var lastSelection: IndexPath!
 
-    init(tableView: UITableView, delegate: FrequencyDelegate) {
+    init(tableView: UITableView, delegate: FrequencyDelegate, frequency: Frequency) {
         self.tableView = tableView
         self.delegate = delegate
+        self.frequency = frequency
         super.init()
         tableView.delegate = self
         tableView.dataSource = self
@@ -23,7 +26,7 @@ class RepeatSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return 4
+        return Frequency.allValues.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,34 +35,27 @@ class RepeatSource: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            delegate?.setFrequency(frequency: Frequency.day)
-        case 1:
-            delegate?.setFrequency(frequency: Frequency.week)
-        case 2:
-            delegate?.setFrequency(frequency: Frequency.month)
-        case 3:
-            delegate?.setFrequency(frequency: Frequency.year)
-        default:
-            delegate?.setFrequency(frequency: Frequency.day)
+        if lastSelection != nil {
+            tableView.cellForRow(at: lastSelection)?.accessoryType = .none
         }
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        lastSelection = indexPath
+        tableView.deselectRow(at: indexPath, animated: true)
+        let frequency = getFrequencyFromIndexPath(index: indexPath)
+        delegate?.setFrequency(frequency: frequency)
     }
 
-    private func dequeueCell(in _: UITableView, index index: IndexPath) -> UITableViewCell {
+    private func dequeueCell(in _: UITableView, index indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        switch index.row {
-        case 0:
-            cell.textLabel!.text = "Every \(Frequency.day.rawValue)"
-        case 1:
-            cell.textLabel!.text = "Every \(Frequency.week.rawValue)"
-        case 2:
-            cell.textLabel!.text = "Every \(Frequency.month.rawValue)"
-        case 3:
-            cell.textLabel!.text = "Every \(Frequency.year.rawValue)"
-        default:
-            cell.textLabel!.text = ""
+        cell.textLabel?.text = "\(getFrequencyFromIndexPath(index: indexPath).rawValue)"
+        if frequency == Frequency.allValues[indexPath.row] {
+            cell.accessoryType = .checkmark
+            lastSelection = indexPath
         }
         return cell
+    }
+
+    private func getFrequencyFromIndexPath(index: IndexPath) -> Frequency {
+        return Frequency.allValues[index.row]
     }
 }
