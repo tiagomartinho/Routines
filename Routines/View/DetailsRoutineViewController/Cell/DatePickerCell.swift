@@ -6,7 +6,6 @@ class DatePickerCell: UITableViewCell {
     let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.date = Date()
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
         return datePicker
     }()
 

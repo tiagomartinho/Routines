@@ -7,8 +7,6 @@ class DateCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
         label.text = "Alarm"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -44,13 +42,13 @@ class DateCell: UITableViewCell {
         addSubview(label)
 
         label.centerYToSuperview()
-        label.leadingToSuperview(offset: 8)
+        label.leadingToSuperview(offset: 20)
     }
 
     func setupDateLabel() {
         addSubview(dateLabel)
 
         dateLabel.centerYToSuperview()
-        dateLabel.trailingToSuperview(offset: 8)
+        dateLabel.trailingToSuperview(offset: 20)
     }
 }

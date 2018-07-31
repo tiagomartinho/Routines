@@ -8,16 +8,16 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     private let textFieldCell = "TextFieldCell"
 
     private var datePickerIndexPath: IndexPath?
+    private var detailsDelegate: DetailsRoutineViewControllerDelegate?
     let tableView: UITableView
     var datePickerDate: Date?
     var alarm: Bool?
     var routineName: String?
 
-    weak var delegate: DetailsRoutineViewDelegate?
-
-    init(tableView: UITableView) {
+    init(tableView: UITableView, delegate: DetailsRoutineViewControllerDelegate) {
         self.tableView = tableView
         super.init()
+        detailsDelegate = delegate
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: activateNotificationCell)
@@ -40,9 +40,9 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
             return 1
         } else {
             if datePickerIndexPath != nil {
-                return 3
+                return 4
             } else {
-                return 2
+                return 3
             }
         }
     }
@@ -62,6 +62,9 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
                 datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
                 tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
                 tableView.deselectRow(at: indexPath, animated: true)
+            }
+            if indexPath.row == 2 {
+                detailsDelegate?.routeToRepeatViewController()
             }
         }
         tableView.endUpdates()
@@ -111,6 +114,11 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
                     return UITableViewCell()
                 }
                 return cell
+            } else if indexPath.row == 2 {
+                let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+                cell.textLabel!.text = "Repeat"
+                cell.accessoryType = .disclosureIndicator
+                return cell
             }
         }
         return UITableViewCell(style: .default, reuseIdentifier: "cell")
@@ -123,7 +131,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
 
 extension DetailsRoutineSource: DatePickerDelegate {
     internal func didChangeDate(date: Date) {
-        let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? DateCell
+        let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 1)) as? DateCell
         cell?.setLabelText(text: DateHelper.convertDateToString(date: date))
         datePickerDate = date
     }

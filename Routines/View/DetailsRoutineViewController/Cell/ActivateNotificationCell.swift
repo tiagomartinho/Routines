@@ -6,8 +6,6 @@ class ActivateNotificationCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
         label.text = "Remind me on a day"
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
@@ -31,13 +29,13 @@ class ActivateNotificationCell: UITableViewCell {
         addSubview(label)
 
         label.centerYToSuperview()
-        label.leadingToSuperview(offset: 8)
+        label.leadingToSuperview(offset: 20)
     }
 
     func setupNotificationSwitch() {
         addSubview(notificationSwitch)
 
         notificationSwitch.centerYToSuperview()
-        notificationSwitch.trailingToSuperview(offset: 8)
+        notificationSwitch.trailingToSuperview(offset: 20)
     }
 }

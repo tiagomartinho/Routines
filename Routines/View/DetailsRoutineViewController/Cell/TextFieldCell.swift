@@ -6,7 +6,6 @@ import UIKit
 class TextFieldCell: UITableViewCell {
     let textField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
@@ -35,6 +34,6 @@ class TextFieldCell: UITableViewCell {
     func setupTextField() {
         addSubview(textField)
 
-        textField.edgesToSuperview(insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: -8))
+        textField.edgesToSuperview(insets: UIEdgeInsets(top: 8, left: 20, bottom: 8, right: -20))
     }
 }
