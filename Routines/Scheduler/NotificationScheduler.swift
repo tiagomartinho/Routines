@@ -28,17 +28,33 @@ class NotificationScheduler: NotificationSchedulerProtocol {
         })
     }
 
-    func createNotificationOnDate(date: Date) {
+    func createNotificationOnDate(id: String, date: Date, frequency: Frequency?) {
         let notification = UNMutableNotificationContent()
         notification.title = "My First Notification"
         notification.subtitle = "Study Swift"
         notification.body = "This is the notification create at \(date)"
-        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let dateComponents = dateComponentsBuilder(frequency: frequency)
+        let triggerDate = Calendar.current.dateComponents(dateComponents, from: date)
         let notificationTrigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
                                                                 repeats: true)
-        let request = UNNotificationRequest(identifier: UUID().uuidString,
+        let request = UNNotificationRequest(identifier: id,
                                             content: notification,
                                             trigger: notificationTrigger)
         center.add(request, withCompletionHandler: nil)
+    }
+
+    func dateComponentsBuilder(frequency: Frequency?) -> Set<Calendar.Component> {
+        switch frequency {
+        case .day?:
+            return [.hour, .minute, .second]
+        case .week?:
+            return [.year, .month, .day, .hour, .minute, .second]
+        case .month?:
+            return [.day, .hour, .minute, .second]
+        case .year?:
+            return [.month, .day, .hour, .minute, .second]
+        default:
+            return [.year, .month, .day, .hour, .minute, .second]
+        }
     }
 }

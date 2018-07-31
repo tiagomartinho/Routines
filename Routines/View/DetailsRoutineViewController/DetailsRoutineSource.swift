@@ -11,13 +11,15 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     private var detailsDelegate: DetailsRoutineViewControllerDelegate?
     let tableView: UITableView
     var datePickerDate: Date?
-    var alarm: Bool?
+    var alarm: Bool
     var routineName: String?
 
     init(tableView: UITableView, delegate: DetailsRoutineViewControllerDelegate) {
         self.tableView = tableView
+        alarm = false
         super.init()
         detailsDelegate = delegate
+        datePickerDate = Date()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: activateNotificationCell)
@@ -154,7 +156,8 @@ extension DetailsRoutineSource: UITextFieldDelegate {
         return true
     }
 
-    func textField(_: UITextField, shouldChangeCharactersIn _: NSRange, replacementString _: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+        routineName = textField.text
         return true
     }
 

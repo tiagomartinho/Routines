@@ -5,6 +5,7 @@ class DetailsRoutineViewController: UIViewController {
     var notificationScheduler: NotificationScheduler
     lazy var mainView: DetailsRoutineView = DetailsRoutineView()
     var mainSource: DetailsRoutineSource?
+    var frequency: Frequency?
 
     init(scheduler: NotificationScheduler) {
         notificationScheduler = scheduler
@@ -27,24 +28,18 @@ class DetailsRoutineViewController: UIViewController {
     }
 
     @objc func doneTapped() {
-        guard let routineName = mainSource?.routineName else {
-            fatalError()
-        }
-        guard let alarm = mainSource?.alarm else {
-            fatalError()
-        }
-        guard let date = mainSource?.datePickerDate else {
-            fatalError()
-        }
-        let routine = Routine(name: routineName, alarm: alarm, date: date)
-        if alarm {
-            createNotificaton(on: date)
+        guard let routineName = mainSource?.routineName else { fatalError() }
+        guard let date = mainSource?.datePickerDate else { fatalError() }
+        let alarm = mainSource?.alarm
+        let routine = Routine(name: routineName, alarm: alarm!, date: date, frequency: frequency)
+        if alarm! {
+            createNotificaton(id: routine.getId(), on: date, frequency: frequency)
         }
         // save routine
     }
 
-    func createNotificaton(on: Date) {
-        notificationScheduler.createNotificationOnDate(date: on)
+    func createNotificaton(id: String, on: Date, frequency: Frequency?) {
+        notificationScheduler.createNotificationOnDate(id: id, date: on, frequency: frequency)
         notificationScheduler.getAllNotifications()
     }
 
@@ -55,6 +50,12 @@ class DetailsRoutineViewController: UIViewController {
 
 extension DetailsRoutineViewController: DetailsRoutineViewControllerDelegate {
     func routeToRepeatViewController() {
-        navigationController?.pushViewController(RepeatViewController(), animated: true)
+        navigationController?.pushViewController(RepeatViewController(delegate: self), animated: true)
+    }
+}
+
+extension DetailsRoutineViewController: FrequencyDelegate {
+    func setFrequency(frequency: Frequency) {
+        self.frequency = frequency
     }
 }
