@@ -2,13 +2,7 @@ import Foundation
 import UIKit
 
 class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource {
-    private let activateNotificationCell = "ActivateNotificationCell"
-    private let datePickerCell = "DatePickerCell"
-    private let dateCell = "DateCell"
-    private let textFieldCell = "TextFieldCell"
-    private let repeatLabel = "RepeatLabel"
-
-    private var datePickerIndexPath: IndexPath?
+    var datePickerIndexPath: IndexPath?
     private var detailsDelegate: DetailsRoutineViewControllerDelegate?
     let tableView: UITableView
     var datePickerDate: Date?
@@ -16,7 +10,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     var routineName: String?
     var frequency: String? {
         didSet {
-            let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 1)) as? RepeatCell
+            let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 1)) as? FrequencyCell
             cell?.setFrequencyLabelText(text: frequency!)
         }
     }
@@ -29,11 +23,11 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         datePickerDate = Date()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ActivateNotificationCell.self, forCellReuseIdentifier: activateNotificationCell)
-        tableView.register(DatePickerCell.self, forCellReuseIdentifier: datePickerCell)
-        tableView.register(DateCell.self, forCellReuseIdentifier: dateCell)
-        tableView.register(TextFieldCell.self, forCellReuseIdentifier: textFieldCell)
-        tableView.register(RepeatCell.self, forCellReuseIdentifier: repeatLabel)
+        tableView.register(AlarmCell.self)
+        tableView.register(DatePickerCell.self)
+        tableView.register(DateCell.self)
+        tableView.register(TextFieldCell.self)
+        tableView.register(FrequencyCell.self)
     }
 
     func tableView(_: UITableView,
@@ -57,8 +51,10 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         }
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueCell(in: tableView, index: indexPath)
+    func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = dequeueCell(in: tableView, index: indexPath)
+//        return cell
+        let cell = DetailsRoutineCellBuilder.build(tableView: tableView, indexPath: indexPath, datePickerIndexPath: datePickerIndexPath, textFieldDelegate: self, datePickerDelegate: self, detailsRoutine: self)
         return cell
     }
 
@@ -88,7 +84,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         }
     }
 
-    private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
+    private func ©(indexPath: IndexPath) -> IndexPath {
         if let datePickerIndexPath = datePickerIndexPath,
             datePickerIndexPath.row < indexPath.row {
             return indexPath
@@ -99,36 +95,26 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
 
     private func dequeueCell(in tableView: UITableView, index indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: textFieldCell) as? TextFieldCell else {
-                return UITableViewCell()
-            }
+            guard let cell = tableView.dequeueReusableCell(TextFieldCell.self) else { return UITableViewCell() }
             cell.configure(text: "", placeholder: "Name")
             cell.textField.delegate = self
             return cell
         } else {
             if datePickerIndexPath == indexPath {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: datePickerCell) as? DatePickerCell else {
-                    return UITableViewCell()
-                }
+                guard let cell = tableView.dequeueReusableCell(DatePickerCell.self) else { return UITableViewCell() }
                 cell.delegate = self
                 return cell
             } else if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: activateNotificationCell) as? ActivateNotificationCell else {
-                    return UITableViewCell()
-                }
+                let cell = tableView.dequeueReusableCell(AlarmCell.self)!
                 cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
                 cell.selectionStyle = .none
                 return cell
             } else if indexPath.row == 1 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: dateCell) as? DateCell else {
-                    return UITableViewCell()
-                }
+                guard let cell = tableView.dequeueReusableCell(DateCell.self) else { return UITableViewCell() }
                 cell.isHidden = true
                 return cell
             } else if indexPath.row == 2 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: repeatLabel) as? RepeatCell else {
-                    return UITableViewCell()
-                }
+                let cell = tableView.dequeueReusableCell(FrequencyCell.self)!
                 cell.isHidden = true
                 return cell
             }
@@ -136,7 +122,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         return UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
 
-    @objc private func switchDidChange(sender: UISwitch) {
+    @objc public func switchDidChange(sender: UISwitch) {
         alarm = sender.isOn ? true : false
         let dateCell = tableView.cellForRow(at: IndexPath(row: 1, section: 1))
         let repeatCell = tableView.cellForRow(at: IndexPath(row: 2, section: 1))

@@ -14,8 +14,8 @@ class TextFieldCell: UITableViewCell {
         setupTextField()
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     public func configure(text: String?, placeholder: String) {

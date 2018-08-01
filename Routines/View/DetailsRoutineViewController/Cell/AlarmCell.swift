@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class ActivateNotificationCell: UITableViewCell {
+class AlarmCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
         label.text = "Remind me on a day"
@@ -21,8 +21,8 @@ class ActivateNotificationCell: UITableViewCell {
         setupNotificationSwitch()
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     func setupLabel() {

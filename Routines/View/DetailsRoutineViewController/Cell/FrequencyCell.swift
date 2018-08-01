@@ -3,7 +3,7 @@ import TinyConstraints
 import UIKit
 
 @IBDesignable
-class RepeatCell: UITableViewCell {
+class FrequencyCell: UITableViewCell {
     let label: UILabel = {
         let label = UILabel()
         label.text = "Repeat"
@@ -22,8 +22,8 @@ class RepeatCell: UITableViewCell {
         setupFrequencyLabel()
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
     // Cell height
