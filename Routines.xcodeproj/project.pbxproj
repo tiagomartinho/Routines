@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302F31E12110B9DC00BD727A /* RepeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F31E02110B9DC00BD727A /* RepeatCell.swift */; };
+		302F31E12110B9DC00BD727A /* FrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F31E02110B9DC00BD727A /* FrequencyCell.swift */; };
 		3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236D20FCE6C70013DCAE /* AppDelegate.swift */; };
 		3031237020FCE6C70013DCAE /* DetailsRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */; };
 		3031237520FCE6C70013DCAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3031237420FCE6C70013DCAE /* Assets.xcassets */; };
@@ -21,6 +21,8 @@
 		3066A727210A3042001A9BBE /* DateHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A726210A3042001A9BBE /* DateHelperTest.swift */; };
 		3066A729210A3527001A9BBE /* DetailsRoutineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A728210A3527001A9BBE /* DetailsRoutineSource.swift */; };
 		3066A72B210A3B75001A9BBE /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */; };
+		3071785D211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */; };
+		3071785F21121700000B9AE9 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071785E21121700000B9AE9 /* UITableViewExtension.swift */; };
 		30820283210F754C001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820282210F754C001BB9CB /* Routine.swift */; };
 		30820285210F75F6001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820284210F75F6001BB9CB /* Routine.swift */; };
 		30820287210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */; };
@@ -35,8 +37,8 @@
 		30B2889B21106CFC0069852F /* FrequencyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2889A21106CFC0069852F /* FrequencyDelegate.swift */; };
 		30CDDDCB210B9A4700B1A65D /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */; };
 		30CDDDCD210B9A5400B1A65D /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */; };
-		30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */; };
-		30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */; };
+		30F95CAE2108D78100832323 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CAD2108D78100832323 /* AlarmCell.swift */; };
+		30F95CB02108D78D00832323 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* AlarmCell.xib */; };
 		30F95CB22108D89F00832323 /* DetailsRoutineViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */; };
 		30FFDADF210784D900E4CED0 /* DetailsRoutineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */; };
 		A629E597D58EC6D61B1FD480 /* Pods_RoutinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79E32EDAF7DABD828B9E56 /* Pods_RoutinesTests.framework */; };
@@ -64,8 +66,8 @@
 /* Begin PBXFileReference section */
 		2F4B87FBE3A54FF600BB92DB /* Pods_Routines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8DC62A42F9FC5BB29B3144 /* Pods-Routines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routines/Pods-Routines.release.xcconfig"; sourceTree = "<group>"; };
-		302F31E02110B9DC00BD727A /* RepeatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatCell.swift; sourceTree = "<group>"; };
-		302F31E22110B9F200BD727A /* RepeatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RepeatCell.xib; path = /Users/andremartingo/Development/Swift/Routines/Routines/View/DetailsRoutineViewController/Cell/RepeatCell.xib; sourceTree = "<absolute>"; };
+		302F31E02110B9DC00BD727A /* FrequencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCell.swift; sourceTree = "<group>"; };
+		302F31E22110B9F200BD727A /* FrequencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FrequencyCell.xib; path = /Users/andremartingo/Development/Swift/Routines/Routines/View/DetailsRoutineViewController/Cell/FrequencyCell.xib; sourceTree = "<absolute>"; };
 		3031236A20FCE6C70013DCAE /* Routines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Routines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3031236D20FCE6C70013DCAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 		3066A726210A3042001A9BBE /* DateHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTest.swift; sourceTree = "<group>"; };
 		3066A728210A3527001A9BBE /* DetailsRoutineSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineSource.swift; sourceTree = "<group>"; };
 		3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
+		3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineCellBuilder.swift; sourceTree = "<group>"; };
+		3071785E21121700000B9AE9 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		30820282210F754C001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		30820284210F75F6001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewControllerTest.swift; sourceTree = "<group>"; };
@@ -99,8 +103,8 @@
 		30B2889A21106CFC0069852F /* FrequencyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyDelegate.swift; sourceTree = "<group>"; };
 		30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
-		30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateNotificationCell.swift; sourceTree = "<group>"; };
-		30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivateNotificationView.xib; sourceTree = "<group>"; };
+		30F95CAD2108D78100832323 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
+		30F95CAF2108D78D00832323 /* AlarmCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmCell.xib; sourceTree = "<group>"; };
 		30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewTest.swift; sourceTree = "<group>"; };
 		30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsRoutineView.xib; sourceTree = "<group>"; };
 		5560E33094045FF2B2466B04 /* Pods-RoutinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesUITests/Pods-RoutinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,8 +232,9 @@
 		30F95CAC2108D77100832323 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				30F95CAD2108D78100832323 /* ActivateNotificationCell.swift */,
-				30F95CAF2108D78D00832323 /* ActivateNotificationView.xib */,
+				3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */,
+				30F95CAD2108D78100832323 /* AlarmCell.swift */,
+				30F95CAF2108D78D00832323 /* AlarmCell.xib */,
 				308C22552108DF7D0030CF6B /* DatePickerCell.swift */,
 				308C22572108DF8A0030CF6B /* DatePickerCell.xib */,
 				308BD77A2109D450003C271E /* DateCell.swift */,
@@ -237,8 +242,8 @@
 				3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */,
 				30CDDDCA210B9A4700B1A65D /* TextFieldCell.swift */,
 				30CDDDCC210B9A5400B1A65D /* TextFieldCell.xib */,
-				302F31E02110B9DC00BD727A /* RepeatCell.swift */,
-				302F31E22110B9F200BD727A /* RepeatCell.xib */,
+				302F31E02110B9DC00BD727A /* FrequencyCell.swift */,
+				302F31E22110B9F200BD727A /* FrequencyCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */,
 				3066A728210A3527001A9BBE /* DetailsRoutineSource.swift */,
 				3066A724210A2FDB001A9BBE /* DateHelper.swift */,
+				3071785E21121700000B9AE9 /* UITableViewExtension.swift */,
 			);
 			path = DetailsRoutineViewController;
 			sourceTree = "<group>";
@@ -426,7 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F95CB02108D78D00832323 /* ActivateNotificationView.xib in Resources */,
+				30F95CB02108D78D00832323 /* AlarmCell.xib in Resources */,
 				3031237820FCE6C70013DCAE /* LaunchScreen.storyboard in Resources */,
 				308C22582108DF8A0030CF6B /* DatePickerCell.xib in Resources */,
 				308BD77D2109D457003C271E /* DateCell.xib in Resources */,
@@ -552,14 +558,16 @@
 				3066A729210A3527001A9BBE /* DetailsRoutineSource.swift in Sources */,
 				30820289210F815D001BB9CB /* RepeatViewController.swift in Sources */,
 				308BD77B2109D450003C271E /* DateCell.swift in Sources */,
-				30F95CAE2108D78100832323 /* ActivateNotificationCell.swift in Sources */,
+				3071785F21121700000B9AE9 /* UITableViewExtension.swift in Sources */,
+				30F95CAE2108D78100832323 /* AlarmCell.swift in Sources */,
 				30820283210F754C001BB9CB /* Routine.swift in Sources */,
 				30CDDDCB210B9A4700B1A65D /* TextFieldCell.swift in Sources */,
 				3031239D20FD1F5C0013DCAE /* NotificationScheduler.swift in Sources */,
 				308C22562108DF7D0030CF6B /* DatePickerCell.swift in Sources */,
 				3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */,
 				303123A120FD20650013DCAE /* DetailsRoutineView.swift in Sources */,
-				302F31E12110B9DC00BD727A /* RepeatCell.swift in Sources */,
+				3071785D211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift in Sources */,
+				302F31E12110B9DC00BD727A /* FrequencyCell.swift in Sources */,
 				30B28899211064400069852F /* Frequency.swift in Sources */,
 				3066A725210A2FDB001A9BBE /* DateHelper.swift in Sources */,
 				30B2889B21106CFC0069852F /* FrequencyDelegate.swift in Sources */,

@@ -84,7 +84,7 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         }
     }
 
-    private func ©(indexPath: IndexPath) -> IndexPath {
+    private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
         if let datePickerIndexPath = datePickerIndexPath,
             datePickerIndexPath.row < indexPath.row {
             return indexPath
