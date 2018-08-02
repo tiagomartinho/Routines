@@ -23,6 +23,11 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         super.init()
         detailsDelegate = delegate
         datePickerDate = Date()
+        initSections()
+        initTableView()
+    }
+
+    private func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(AlarmCell.self)
@@ -30,7 +35,6 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         tableView.register(DateCell.self)
         tableView.register(TextFieldCell.self)
         tableView.register(FrequencyCell.self)
-        initSections()
     }
 
     private func initSections() {
@@ -67,20 +71,23 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
-        if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row - 1 == indexPath.row {
-            sections[1].items.remove(at: 2)
-            tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
-            self.datePickerIndexPath = nil
-        } else {
-            if indexPath.row == 1 {
+        switch sections[indexPath.section].items[indexPath.row] {
+        case .AlarmDate:
+            if datePickerIndexPath != nil {
+                sections[1].items.remove(at: 2)
+                tableView.deleteRows(at: [datePickerIndexPath!], with: .fade)
+                datePickerIndexPath = nil
+            } else {
                 datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
                 tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
                 sections[1].items.insert(.DatePicker, at: 2)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
-            if indexPath.row == 2 {
-                detailsDelegate?.routeToRepeatViewController()
-            }
+
+        case .Frequency:
+            detailsDelegate?.routeToRepeatViewController()
+        default:
+            break
         }
         tableView.endUpdates()
     }
@@ -100,35 +107,6 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         } else {
             return IndexPath(row: indexPath.row + 1, section: indexPath.section)
         }
-    }
-
-    private func dequeueCell(in tableView: UITableView, index indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(TextFieldCell.self) else { return UITableViewCell() }
-            cell.configure(text: "", placeholder: "Name")
-            cell.textField.delegate = self
-            return cell
-        } else {
-            if datePickerIndexPath == indexPath {
-                guard let cell = tableView.dequeueReusableCell(DatePickerCell.self) else { return UITableViewCell() }
-                cell.delegate = self
-                return cell
-            } else if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(AlarmCell.self)!
-                cell.notificationSwitch.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
-                cell.selectionStyle = .none
-                return cell
-            } else if indexPath.row == 1 {
-                guard let cell = tableView.dequeueReusableCell(DateCell.self) else { return UITableViewCell() }
-                cell.isHidden = true
-                return cell
-            } else if indexPath.row == 2 {
-                let cell = tableView.dequeueReusableCell(FrequencyCell.self)!
-                cell.isHidden = true
-                return cell
-            }
-        }
-        return UITableViewCell(style: .default, reuseIdentifier: "cell")
     }
 
     @objc public func switchDidChange(sender: UISwitch) {
