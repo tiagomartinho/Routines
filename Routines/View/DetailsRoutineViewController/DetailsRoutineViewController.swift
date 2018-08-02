@@ -2,13 +2,13 @@ import UIKit
 import UserNotifications
 
 class DetailsRoutineViewController: UIViewController {
-    var notificationScheduler: NotificationScheduler
     lazy var mainView: DetailsRoutineView = DetailsRoutineView()
     var mainSource: DetailsRoutineSource?
     var frequency: Frequency
+    var presenter: DetailsRoutinePresenter!
 
-    init(scheduler: NotificationScheduler) {
-        notificationScheduler = scheduler
+    init(presenter: DetailsRoutinePresenter) {
+        self.presenter = presenter
         frequency = Frequency.never
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,16 +32,7 @@ class DetailsRoutineViewController: UIViewController {
         guard let routineName = mainSource?.routineName else { fatalError() }
         guard let date = mainSource?.datePickerDate else { fatalError() }
         let alarm = mainSource?.alarm
-        let routine = Routine(name: routineName, alarm: alarm!, date: date, frequency: frequency)
-        if alarm! {
-            createNotificaton(id: routine.getId(), name: routineName, on: date, frequency: frequency)
-        }
-        // save routine
-    }
-
-    func createNotificaton(id: String, name: String, on date: Date, frequency: Frequency?) {
-        notificationScheduler.createNotificationOnDate(id: id, name: name, date: date, frequency: frequency)
-        notificationScheduler.getAllNotifications()
+        presenter.createRoutine(name: routineName, alarm: alarm!, date: date, frequency: frequency)
     }
 
     func routineOff() {
