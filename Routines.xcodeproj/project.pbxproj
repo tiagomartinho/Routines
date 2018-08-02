@@ -28,9 +28,9 @@
 		3075B8DA21135C6B00AE7B26 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8D921135C6B00AE7B26 /* InMemoryRepository.swift */; };
 		3075B8DD21135F7100AE7B26 /* TableViewStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8DC21135F7100AE7B26 /* TableViewStructure.swift */; };
 		3075B8DF21135FC800AE7B26 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8DE21135FC800AE7B26 /* Section.swift */; };
+		3075B8E32113677600AE7B26 /* DetailsRoutinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8E22113677600AE7B26 /* DetailsRoutinePresenter.swift */; };
 		30820283210F754C001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820282210F754C001BB9CB /* Routine.swift */; };
 		30820285210F75F6001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820284210F75F6001BB9CB /* Routine.swift */; };
-		30820287210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */; };
 		30820289210F815D001BB9CB /* RepeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820288210F815D001BB9CB /* RepeatViewController.swift */; };
 		3082028C210F81D0001BB9CB /* RepeatSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082028B210F81D0001BB9CB /* RepeatSource.swift */; };
 		3082028E210F8548001BB9CB /* DetailsRoutineViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3082028D210F8548001BB9CB /* DetailsRoutineViewControllerDelegate.swift */; };
@@ -99,9 +99,9 @@
 		3075B8D921135C6B00AE7B26 /* InMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
 		3075B8DC21135F7100AE7B26 /* TableViewStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewStructure.swift; sourceTree = "<group>"; };
 		3075B8DE21135FC800AE7B26 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		3075B8E22113677600AE7B26 /* DetailsRoutinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutinePresenter.swift; sourceTree = "<group>"; };
 		30820282210F754C001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		30820284210F75F6001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
-		30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewControllerTest.swift; sourceTree = "<group>"; };
 		30820288210F815D001BB9CB /* RepeatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatViewController.swift; sourceTree = "<group>"; };
 		3082028B210F81D0001BB9CB /* RepeatSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSource.swift; sourceTree = "<group>"; };
 		3082028D210F8548001BB9CB /* DetailsRoutineViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -193,12 +193,12 @@
 		3031238120FCE6C70013DCAE /* RoutinesTests */ = {
 			isa = PBXGroup;
 			children = (
+				3075B8E02113676400AE7B26 /* Presenter */,
 				3031238420FCE6C70013DCAE /* Info.plist */,
 				303123A420FD275C0013DCAE /* NotifcationSchedulerTest.swift */,
 				30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */,
 				3066A726210A3042001A9BBE /* DateHelperTest.swift */,
 				30820284210F75F6001BB9CB /* Routine.swift */,
-				30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */,
 			);
 			path = RoutinesTests;
 			sourceTree = "<group>";
@@ -240,6 +240,14 @@
 				3075B8DE21135FC800AE7B26 /* Section.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3075B8E02113676400AE7B26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3075B8E22113677600AE7B26 /* DetailsRoutinePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		3082028A210F8191001BB9CB /* RepeatViewController */ = {
@@ -307,14 +315,14 @@
 		30FFDADD210784C800E4CED0 /* DetailsRoutineViewController */ = {
 			isa = PBXGroup;
 			children = (
+				303123A020FD20650013DCAE /* DetailsRoutineView.swift */,
 				30B2889A21106CFC0069852F /* FrequencyDelegate.swift */,
 				3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */,
 				3082028D210F8548001BB9CB /* DetailsRoutineViewControllerDelegate.swift */,
 				3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */,
-				30F95CAC2108D77100832323 /* Cell */,
-				303123A020FD20650013DCAE /* DetailsRoutineView.swift */,
 				30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */,
 				3066A728210A3527001A9BBE /* DetailsRoutineSource.swift */,
+				30F95CAC2108D77100832323 /* Cell */,
 				3075B8DB21135F6000AE7B26 /* Helpers */,
 			);
 			path = DetailsRoutineViewController;
@@ -608,9 +616,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3075B8E32113677600AE7B26 /* DetailsRoutinePresenter.swift in Sources */,
 				3066A727210A3042001A9BBE /* DateHelperTest.swift in Sources */,
 				303123A520FD275C0013DCAE /* NotifcationSchedulerTest.swift in Sources */,
-				30820287210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift in Sources */,
 				30820285210F75F6001BB9CB /* Routine.swift in Sources */,
 				30F95CB22108D89F00832323 /* DetailsRoutineViewTest.swift in Sources */,
 			);

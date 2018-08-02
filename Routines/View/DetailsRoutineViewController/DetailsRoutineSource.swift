@@ -129,6 +129,11 @@ extension DetailsRoutineSource: DatePickerDelegate {
 extension DetailsRoutineSource: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         routineName = textField.text
+        if routineName!.count > 0 {
+            detailsDelegate?.changeStatusDoneButton(status: true)
+        } else {
+            detailsDelegate?.changeStatusDoneButton(status: false)
+        }
     }
 
     func textFieldShouldBeginEditing(_: UITextField) -> Bool {
@@ -145,6 +150,11 @@ extension DetailsRoutineSource: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
         routineName = textField.text
+        if routineName!.count > 0 {
+            detailsDelegate?.changeStatusDoneButton(status: true)
+        } else {
+            detailsDelegate?.changeStatusDoneButton(status: false)
+        }
         return true
     }
 

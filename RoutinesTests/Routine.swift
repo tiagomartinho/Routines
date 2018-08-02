@@ -19,6 +19,6 @@ class RoutineTest: XCTestCase {
     // MARK: Helpers
 
     func makeSUT(name: String, alarm: Bool, date: Date) -> Routine {
-        return Routine(name: name, alarm: alarm, date: date)
+        return Routine(name: name, alarm: alarm, date: date, frequency: .never)
     }
 }

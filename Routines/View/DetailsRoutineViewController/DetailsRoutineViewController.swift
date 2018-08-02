@@ -26,6 +26,7 @@ class DetailsRoutineViewController: UIViewController {
         mainSource = DetailsRoutineSource(tableView: mainView.settingsTableView, delegate: self)
         navigationItem.title = "Routine"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+        navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     @objc func doneTapped() {
@@ -41,6 +42,10 @@ class DetailsRoutineViewController: UIViewController {
 }
 
 extension DetailsRoutineViewController: DetailsRoutineViewControllerDelegate {
+    func changeStatusDoneButton(status: Bool) {
+        navigationItem.rightBarButtonItem?.isEnabled = status
+    }
+
     func routeToRepeatViewController() {
         navigationController?.pushViewController(RepeatViewController(delegate: self, frequency: frequency), animated: true)
     }

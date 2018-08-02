@@ -15,6 +15,7 @@ class DetailsRoutinePresenter {
         if alarm {
             createNotificaton(id: routine.getId(), name: name, on: date, frequency: frequency)
         }
+        repository.save(routine)
     }
 
     private func createNotificaton(id: String, name: String, on date: Date, frequency: Frequency?) {
