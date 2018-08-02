@@ -10,11 +10,13 @@ target 'Routines' do
 
   target 'RoutinesTests' do
     inherit! :search_paths
+    pod "TinyConstraints"
     # Pods for testing
   end
 
   target 'RoutinesUITests' do
     inherit! :search_paths
+    pod "TinyConstraints"
     # Pods for testing
   end
 
