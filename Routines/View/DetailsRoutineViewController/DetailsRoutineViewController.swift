@@ -48,7 +48,6 @@ extension DetailsRoutineViewController: DetailsRoutineViewControllerDelegate {
 
 extension DetailsRoutineViewController: FrequencyDelegate {
     func setFrequency(frequency: Frequency) {
-        print(frequency)
         self.frequency = frequency
         mainSource?.frequency = self.frequency.rawValue
     }

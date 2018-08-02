@@ -23,6 +23,11 @@
 		3066A72B210A3B75001A9BBE /* DatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */; };
 		3071785D211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */; };
 		3071785F21121700000B9AE9 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071785E21121700000B9AE9 /* UITableViewExtension.swift */; };
+		3075B8D52113588800AE7B26 /* DetailsRoutinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8D42113588800AE7B26 /* DetailsRoutinePresenter.swift */; };
+		3075B8D821135B7100AE7B26 /* RoutineRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8D721135B7100AE7B26 /* RoutineRepository.swift */; };
+		3075B8DA21135C6B00AE7B26 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8D921135C6B00AE7B26 /* InMemoryRepository.swift */; };
+		3075B8DD21135F7100AE7B26 /* TableViewStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8DC21135F7100AE7B26 /* TableViewStructure.swift */; };
+		3075B8DF21135FC800AE7B26 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B8DE21135FC800AE7B26 /* Section.swift */; };
 		30820283210F754C001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820282210F754C001BB9CB /* Routine.swift */; };
 		30820285210F75F6001BB9CB /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820284210F75F6001BB9CB /* Routine.swift */; };
 		30820287210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */; };
@@ -89,6 +94,11 @@
 		3066A72A210A3B75001A9BBE /* DatePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDelegate.swift; sourceTree = "<group>"; };
 		3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineCellBuilder.swift; sourceTree = "<group>"; };
 		3071785E21121700000B9AE9 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		3075B8D42113588800AE7B26 /* DetailsRoutinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutinePresenter.swift; sourceTree = "<group>"; };
+		3075B8D721135B7100AE7B26 /* RoutineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineRepository.swift; sourceTree = "<group>"; };
+		3075B8D921135C6B00AE7B26 /* InMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
+		3075B8DC21135F7100AE7B26 /* TableViewStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewStructure.swift; sourceTree = "<group>"; };
+		3075B8DE21135FC800AE7B26 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		30820282210F754C001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		30820284210F75F6001BB9CB /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		30820286210F7882001BB9CB /* DetailsRoutineViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRoutineViewControllerTest.swift; sourceTree = "<group>"; };
@@ -144,16 +154,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3020E4C9211075F6003E96BD /* DetailsRoutineViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */,
-				30B28898211064400069852F /* Frequency.swift */,
-				30B2889A21106CFC0069852F /* FrequencyDelegate.swift */,
-			);
-			path = DetailsRoutineViewController;
-			sourceTree = "<group>";
-		};
 		3031236120FCE6C70013DCAE = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +181,9 @@
 			children = (
 				3031236D20FCE6C70013DCAE /* AppDelegate.swift */,
 				30FFDAD72107278200E4CED0 /* View */,
-				30FFDAD82107278F00E4CED0 /* Controller */,
+				30FFDAD82107278F00E4CED0 /* Presenter */,
 				30FFDAD92107279600E4CED0 /* Model */,
+				3075B8D621135B5B00AE7B26 /* Repository */,
 				30FFDADA210727A500E4CED0 /* Scheduler */,
 				3031239B20FCE7660013DCAE /* Supporting Files */,
 			);
@@ -221,10 +222,31 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3075B8D621135B5B00AE7B26 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3075B8D721135B7100AE7B26 /* RoutineRepository.swift */,
+				3075B8D921135C6B00AE7B26 /* InMemoryRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3075B8DB21135F6000AE7B26 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3066A724210A2FDB001A9BBE /* DateHelper.swift */,
+				3071785E21121700000B9AE9 /* UITableViewExtension.swift */,
+				3075B8DC21135F7100AE7B26 /* TableViewStructure.swift */,
+				3075B8DE21135FC800AE7B26 /* Section.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		3082028A210F8191001BB9CB /* RepeatViewController */ = {
 			isa = PBXGroup;
 			children = (
 				3082028B210F81D0001BB9CB /* RepeatSource.swift */,
+				30820288210F815D001BB9CB /* RepeatViewController.swift */,
 			);
 			path = RepeatViewController;
 			sourceTree = "<group>";
@@ -232,7 +254,6 @@
 		30F95CAC2108D77100832323 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */,
 				30F95CAD2108D78100832323 /* AlarmCell.swift */,
 				30F95CAF2108D78D00832323 /* AlarmCell.xib */,
 				308C22552108DF7D0030CF6B /* DatePickerCell.swift */,
@@ -257,19 +278,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		30FFDAD82107278F00E4CED0 /* Controller */ = {
+		30FFDAD82107278F00E4CED0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3020E4C9211075F6003E96BD /* DetailsRoutineViewController */,
-				30820288210F815D001BB9CB /* RepeatViewController.swift */,
+				3075B8D42113588800AE7B26 /* DetailsRoutinePresenter.swift */,
 			);
-			path = Controller;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		30FFDAD92107279600E4CED0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				30820282210F754C001BB9CB /* Routine.swift */,
+				30B28898211064400069852F /* Frequency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,13 +307,15 @@
 		30FFDADD210784C800E4CED0 /* DetailsRoutineViewController */ = {
 			isa = PBXGroup;
 			children = (
+				30B2889A21106CFC0069852F /* FrequencyDelegate.swift */,
+				3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */,
 				3082028D210F8548001BB9CB /* DetailsRoutineViewControllerDelegate.swift */,
+				3071785C211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift */,
 				30F95CAC2108D77100832323 /* Cell */,
 				303123A020FD20650013DCAE /* DetailsRoutineView.swift */,
 				30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */,
 				3066A728210A3527001A9BBE /* DetailsRoutineSource.swift */,
-				3066A724210A2FDB001A9BBE /* DateHelper.swift */,
-				3071785E21121700000B9AE9 /* UITableViewExtension.swift */,
+				3075B8DB21135F6000AE7B26 /* Helpers */,
 			);
 			path = DetailsRoutineViewController;
 			sourceTree = "<group>";
@@ -558,6 +581,8 @@
 				3066A729210A3527001A9BBE /* DetailsRoutineSource.swift in Sources */,
 				30820289210F815D001BB9CB /* RepeatViewController.swift in Sources */,
 				308BD77B2109D450003C271E /* DateCell.swift in Sources */,
+				3075B8D52113588800AE7B26 /* DetailsRoutinePresenter.swift in Sources */,
+				3075B8DF21135FC800AE7B26 /* Section.swift in Sources */,
 				3071785F21121700000B9AE9 /* UITableViewExtension.swift in Sources */,
 				30F95CAE2108D78100832323 /* AlarmCell.swift in Sources */,
 				30820283210F754C001BB9CB /* Routine.swift in Sources */,
@@ -569,8 +594,11 @@
 				3071785D211214AC000B9AE9 /* DetailsRoutineCellBuilder.swift in Sources */,
 				302F31E12110B9DC00BD727A /* FrequencyCell.swift in Sources */,
 				30B28899211064400069852F /* Frequency.swift in Sources */,
+				3075B8DD21135F7100AE7B26 /* TableViewStructure.swift in Sources */,
 				3066A725210A2FDB001A9BBE /* DateHelper.swift in Sources */,
+				3075B8DA21135C6B00AE7B26 /* InMemoryRepository.swift in Sources */,
 				30B2889B21106CFC0069852F /* FrequencyDelegate.swift in Sources */,
+				3075B8D821135B7100AE7B26 /* RoutineRepository.swift in Sources */,
 				3031239F20FD1F850013DCAE /* NotificationCenter.swift in Sources */,
 				3082028C210F81D0001BB9CB /* RepeatSource.swift in Sources */,
 			);

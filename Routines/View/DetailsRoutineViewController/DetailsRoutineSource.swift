@@ -15,6 +15,8 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         }
     }
 
+    private var sections = [Section]()
+
     init(tableView: UITableView, delegate: DetailsRoutineViewControllerDelegate) {
         self.tableView = tableView
         alarm = false
@@ -28,6 +30,21 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
         tableView.register(DateCell.self)
         tableView.register(TextFieldCell.self)
         tableView.register(FrequencyCell.self)
+        initSections()
+    }
+
+    private func initSections() {
+        if datePickerIndexPath != nil {
+            sections = [
+                Section(type: .General, items: [.Name]),
+                Section(type: .Alarm, items: [.AlarmSwitch, .AlarmDate, .DatePicker, .Frequency]),
+            ]
+        } else {
+            sections = [
+                Section(type: .General, items: [.Name]),
+                Section(type: .Alarm, items: [.AlarmSwitch, .AlarmDate, .Frequency]),
+            ]
+        }
     }
 
     func tableView(_: UITableView,
@@ -36,37 +53,29 @@ class DetailsRoutineSource: NSObject, UITableViewDelegate, UITableViewDataSource
     }
 
     func numberOfSections(in _: UITableView) -> Int {
-        return 2
+        return sections.count
     }
 
     func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            if datePickerIndexPath != nil {
-                return 4
-            } else {
-                return 3
-            }
-        }
+        return sections[section].items.count
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = dequeueCell(in: tableView, index: indexPath)
-//        return cell
-        let cell = DetailsRoutineCellBuilder.build(tableView: tableView, indexPath: indexPath, datePickerIndexPath: datePickerIndexPath, textFieldDelegate: self, datePickerDelegate: self, detailsRoutine: self)
+        let cell = DetailsRoutineCellBuilder.build(tableView: tableView, sections: sections, indexPath: indexPath, datePickerIndexPath: datePickerIndexPath, textFieldDelegate: self, datePickerDelegate: self, detailsRoutine: self)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
         if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row - 1 == indexPath.row {
+            sections[1].items.remove(at: 2)
             tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
             self.datePickerIndexPath = nil
         } else {
             if indexPath.row == 1 {
                 datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
                 tableView.insertRows(at: [datePickerIndexPath!], with: .fade)
+                sections[1].items.insert(.DatePicker, at: 2)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
             if indexPath.row == 2 {
