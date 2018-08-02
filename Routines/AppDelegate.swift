@@ -8,8 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
         let scheduler = NotificationScheduler()
+        let repository = InMemoryRepository()
+        let presenter = DetailsRoutinePresenter(notificationScheduler: scheduler, repository: repository)
         initNotificationSetupCheck()
-        let detailsRoutineViewController = DetailsRoutineViewController(scheduler: scheduler)
+        let detailsRoutineViewController = DetailsRoutineViewController(presenter: presenter)
         window?.rootViewController = UINavigationController(rootViewController: detailsRoutineViewController)
         window?.makeKeyAndVisible()
         return true
