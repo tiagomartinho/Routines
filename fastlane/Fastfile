@@ -26,8 +26,6 @@ platform :ios do
   end
 
    lane :test do
-      run_tests(workspace: "Routines.xcworkspace",
-            devices: ["iPhone 6s", "iPad Air"],
-            scheme: "Routines")
+    scan
   end
 end
