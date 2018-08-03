@@ -70,3 +70,15 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 Routines.xcodeproj/xcshareddata/
+fastlane/report.xml
+fastlane/screenshots
+screenshots/
+
+*.mobileprovision
+
+*.dSYM.zip
+*.cer
+fastlane/test_output/report.html
+fastlane/test_output/report.junit
+Preview.html
+.DS_Store
