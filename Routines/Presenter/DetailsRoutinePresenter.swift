@@ -13,7 +13,7 @@ class DetailsRoutinePresenter {
     func createRoutine(name: String, alarm: Bool, date: Date, frequency: Frequency) {
         let routine = Routine(name: name, alarm: alarm, date: date, frequency: frequency)
         if alarm {
-            createNotificaton(id: routine.getId(), name: name, on: date, frequency: frequency)
+            createNotificaton(id: routine.id, name: name, on: date, frequency: frequency)
         }
         repository.save(routine)
     }

@@ -13,7 +13,7 @@ class RoutineTest: XCTestCase {
         let today = Date()
         let sut = makeSUT(name: "FirstRoutine", alarm: true, date: today)
 
-        XCTAssertNotNil(sut.getId())
+        XCTAssertNotNil(sut.id)
     }
 
     // MARK: Helpers
