@@ -46,9 +46,9 @@
 		30F95CB02108D78D00832323 /* AlarmCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30F95CAF2108D78D00832323 /* AlarmCell.xib */; };
 		30F95CB22108D89F00832323 /* DetailsRoutineViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F95CB12108D89F00832323 /* DetailsRoutineViewTest.swift */; };
 		30FFDADF210784D900E4CED0 /* DetailsRoutineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */; };
-		A629E597D58EC6D61B1FD480 /* Pods_RoutinesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A79E32EDAF7DABD828B9E56 /* Pods_RoutinesTests.framework */; };
-		CA63F3B9277CF4842871B897 /* Pods_RoutinesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCE5B9E72A65EAC65358121 /* Pods_RoutinesUITests.framework */; };
-		D294FBD0AC3357A4A883693C /* Pods_Routines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4B87FBE3A54FF600BB92DB /* Pods_Routines.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		5D6716B095B621898D46ECDC /* libPods-Routines.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A16A0B5D8ADAEC342FE72B9C /* libPods-Routines.a */; };
+		7B7601C18E96176FD6DC6F95 /* libPods-RoutinesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A977622E25E64DD0DDDBAC5 /* libPods-RoutinesTests.a */; };
+		B86621B7BDBC73AC77799CBC /* libPods-RoutinesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7418BB53424F70058EEEDE52 /* libPods-RoutinesUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F4B87FBE3A54FF600BB92DB /* Pods_Routines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Routines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8DC62A42F9FC5BB29B3144 /* Pods-Routines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routines/Pods-Routines.release.xcconfig"; sourceTree = "<group>"; };
 		302F31E02110B9DC00BD727A /* FrequencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCell.swift; sourceTree = "<group>"; };
 		302F31E22110B9F200BD727A /* FrequencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FrequencyCell.xib; path = /Users/andremartingo/Development/Swift/Routines/Routines/View/DetailsRoutineViewController/Cell/FrequencyCell.xib; sourceTree = "<absolute>"; };
@@ -119,9 +118,10 @@
 		30FFDADE210784D900E4CED0 /* DetailsRoutineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsRoutineView.xib; sourceTree = "<group>"; };
 		5560E33094045FF2B2466B04 /* Pods-RoutinesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesUITests/Pods-RoutinesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A87F0E2964A4925133B8FC1 /* Pods-RoutinesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesTests/Pods-RoutinesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7418BB53424F70058EEEDE52 /* libPods-RoutinesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RoutinesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DFB1D88A182EB4A1673B78 /* Pods-Routines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routines.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Routines/Pods-Routines.debug.xcconfig"; sourceTree = "<group>"; };
-		9A79E32EDAF7DABD828B9E56 /* Pods_RoutinesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutinesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBCE5B9E72A65EAC65358121 /* Pods_RoutinesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoutinesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A977622E25E64DD0DDDBAC5 /* libPods-RoutinesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RoutinesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16A0B5D8ADAEC342FE72B9C /* libPods-Routines.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Routines.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE6D9B087A7A04AAC366FDC /* Pods-RoutinesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesTests/Pods-RoutinesTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA2A8A1E140841F359CDA980 /* Pods-RoutinesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoutinesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoutinesUITests/Pods-RoutinesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D294FBD0AC3357A4A883693C /* Pods_Routines.framework in Frameworks */,
+				5D6716B095B621898D46ECDC /* libPods-Routines.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A629E597D58EC6D61B1FD480 /* Pods_RoutinesTests.framework in Frameworks */,
+				7B7601C18E96176FD6DC6F95 /* libPods-RoutinesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA63F3B9277CF4842871B897 /* Pods_RoutinesUITests.framework in Frameworks */,
+				B86621B7BDBC73AC77799CBC /* libPods-RoutinesUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,9 +344,9 @@
 		FDD33407E0BBDF6BF61A7228 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2F4B87FBE3A54FF600BB92DB /* Pods_Routines.framework */,
-				9A79E32EDAF7DABD828B9E56 /* Pods_RoutinesTests.framework */,
-				BBCE5B9E72A65EAC65358121 /* Pods_RoutinesUITests.framework */,
+				A16A0B5D8ADAEC342FE72B9C /* libPods-Routines.a */,
+				9A977622E25E64DD0DDDBAC5 /* libPods-RoutinesTests.a */,
+				7418BB53424F70058EEEDE52 /* libPods-RoutinesUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -363,7 +363,6 @@
 				3031236720FCE6C70013DCAE /* Frameworks */,
 				3031236820FCE6C70013DCAE /* Resources */,
 				3087CDA52107264500E2F4EF /* SwiftFormat */,
-				30A40F25B7C3B3828626FE84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,24 +502,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftformat >/dev/null; then\nswiftformat .\nelse\necho \"warning: Swiftformat not installed, download from https://github.com/realm/Swiftformat\"\nfi";
-		};
-		30A40F25B7C3B3828626FE84 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Routines/Pods-Routines-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Routines/Pods-Routines-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		A813372AB32F67EE1F057CDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
