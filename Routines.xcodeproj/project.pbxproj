@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240F8D6F2115B22C00E9C2A0 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240F8D6E2115B22C00E9C2A0 /* EnumCollection.swift */; };
 		302F31E12110B9DC00BD727A /* FrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302F31E02110B9DC00BD727A /* FrequencyCell.swift */; };
 		3031236E20FCE6C70013DCAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236D20FCE6C70013DCAE /* AppDelegate.swift */; };
 		3031237020FCE6C70013DCAE /* DetailsRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031236F20FCE6C70013DCAE /* DetailsRoutineViewController.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240F8D6E2115B22C00E9C2A0 /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		2F8DC62A42F9FC5BB29B3144 /* Pods-Routines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Routines.release.xcconfig"; path = "Pods/Target Support Files/Pods-Routines/Pods-Routines.release.xcconfig"; sourceTree = "<group>"; };
 		302F31E02110B9DC00BD727A /* FrequencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCell.swift; sourceTree = "<group>"; };
 		302F31E22110B9F200BD727A /* FrequencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FrequencyCell.xib; path = /Users/andremartingo/Development/Swift/Routines/Routines/View/DetailsRoutineViewController/Cell/FrequencyCell.xib; sourceTree = "<absolute>"; };
@@ -299,6 +301,7 @@
 			children = (
 				30820282210F754C001BB9CB /* Routine.swift */,
 				30B28898211064400069852F /* Frequency.swift */,
+				240F8D6E2115B22C00E9C2A0 /* EnumCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				3075B8D821135B7100AE7B26 /* RoutineRepository.swift in Sources */,
 				3031239F20FD1F850013DCAE /* NotificationCenter.swift in Sources */,
 				3082028C210F81D0001BB9CB /* RepeatSource.swift in Sources */,
+				240F8D6F2115B22C00E9C2A0 /* EnumCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
