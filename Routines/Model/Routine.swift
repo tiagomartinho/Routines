@@ -16,6 +16,6 @@ class Routine {
     }
 
     func getId() -> String {
-        return id != nil ? id! : ""
+        return id ?? ""
     }
 }
